@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>fukdat — Junior Developer · Python / FastAPI / React Native</title>
-<meta name="description" content="Вадим (fukdat) — начинающий разработчик. Backend на Python и FastAPI, мобильная разработка на React Native, Telegram-боты и интеграция AI. Открыт к стажировке и Junior-позициям.">
+<title>fukdat — Python & React Native Developer · Remote</title>
+<meta name="description" content="Vadim (fukdat) — Python & React Native developer with production experience. FastAPI, aiogram, Expo, TypeScript, Docker, AI integration. Open to remote work worldwide.">
 <meta name="author" content="fukdat">
 <meta name="theme-color" content="#0b0b0c">
 <meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
-<meta property="og:title" content="fukdat — Junior Developer">
-<meta property="og:description" content="Backend (Python/FastAPI), мобильная разработка (React Native), Telegram-боты, интеграция AI. Открыт к стажировке и Junior-позициям.">
+<meta property="og:title" content="fukdat — Python & React Native Developer">
+<meta property="og:description" content="Python & React Native developer with production experience. FastAPI, Docker, AI integration. Open to remote work worldwide.">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -342,20 +342,36 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
   .reveal,.hero-inner>*{opacity:1 !important;transform:none !important}
   .hero-orb{animation:none}
 }
+
+/* ============================================================
+   LANGUAGE TOGGLE
+   ============================================================ */
+body.lang-ru [data-lang="en"]{display:none}
+body.lang-en [data-lang="ru"]{display:none}
+.lang-toggle{
+  font-size:12px;font-weight:700;color:var(--text-2);
+  background:var(--surface);border:1px solid var(--border);
+  padding:6px 12px;border-radius:var(--r-pill);cursor:pointer;
+  transition:color var(--t-fast) var(--ease-soft),border-color var(--t-fast) var(--ease-soft),background var(--t-fast) var(--ease-soft);
+  letter-spacing:.08em;text-transform:uppercase;
+  margin-left:4px;
+}
+.lang-toggle:hover{color:var(--text);border-color:var(--accent-soft);background:var(--surface-2)}
 </style>
 </head>
-<body>
+<body class="lang-ru">
 
-<a class="skip" href="#main">Перейти к содержимому</a>
+<a class="skip" href="#main"><span data-lang="ru">Перейти к содержимому</span><span data-lang="en">Skip to content</span></a>
 
 <header class="nav">
   <nav class="nav-inner" aria-label="Основная навигация">
     <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>fukdat</a>
     <div class="nav-links">
-      <a href="#skills">Навыки</a>
-      <a href="#projects">Проекты</a>
-      <a href="#achievements">Достижения</a>
-      <a class="nav-cta" href="#contacts">Связаться</a>
+      <a href="#skills"><span data-lang="ru">Навыки</span><span data-lang="en">Skills</span></a>
+      <a href="#projects"><span data-lang="ru">Проекты</span><span data-lang="en">Projects</span></a>
+      <a href="#achievements"><span data-lang="ru">Достижения</span><span data-lang="en">About</span></a>
+      <a class="nav-cta" href="#contacts"><span data-lang="ru">Связаться</span><span data-lang="en">Contact</span></a>
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
     </div>
   </nav>
 </header>
@@ -369,9 +385,12 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
     <div class="wrap">
       <div class="hero-inner">
         <div class="avatar"><img src="data:image/jpeg;base64,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" alt="Портрет — Вадим (fukdat)" width="240" height="240"></div>
-        <span class="badge"><span class="pulse" aria-hidden="true"></span>Открыт к стажировке и Junior-позициям</span>
+        <span class="badge"><span class="pulse" aria-hidden="true"></span><span data-lang="ru">Открыт к удалённой работе · Сейчас</span><span data-lang="en">Open to remote work · Available now</span></span>
         <h1 class="hero-name">fukdat<span class="hero-role">Вадим · <span class="accent">backend &amp; mobile developer</span></span></h1>
-        <p class="bio"><b>Я Вадим</b> — начинающий разработчик с практическим опытом создания и деплоя собственных проектов. Специализируюсь на бэкенд-разработке (<b>Python, FastAPI</b>) и мобильных приложениях (<b>React Native</b>). Имею опыт работы с реляционными базами данных, разработки Telegram-ботов и интеграции нейросетевых API. Умею самостоятельно находить решения и доводить проекты до рабочего состояния.</p>
+        <p class="bio">
+          <span data-lang="ru"><b>Я Вадим</b> — разработчик с практическим опытом создания и деплоя продакшн-проектов. Специализируюсь на бэкенде (<b>Python, FastAPI</b>) и мобильной разработке (<b>React Native</b>). Строю Telegram-ботов, REST API, интегрирую AI. Ищу удалённую работу.</span>
+          <span data-lang="en"><b>I'm Vadim</b> — a self-driven Python &amp; React Native developer with hands-on production experience. I build and ship real products: REST APIs with <b>FastAPI</b>, Telegram bots with <b>aiogram</b>, mobile apps with <b>Expo</b>. Available for remote work worldwide.</span>
+        </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://t.me/fukdat" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.95 4.27 18.6 19.86c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.97 5.4c.4-.36-.09-.56-.63-.2L5.6 12.42.84 10.93c-1.04-.32-1.06-1.04.22-1.54L20.6 2.77c.86-.32 1.62.2 1.35 1.5z"/></svg>
@@ -390,9 +409,9 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
   <section class="block" id="skills">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Стек</span>
-        <h2 class="h-section">Технические навыки</h2>
-        <p class="section-sub">Инструменты, с которыми я работаю на практике — от API и баз данных до деплоя в продакшн.</p>
+        <span class="eyebrow"><span data-lang="ru">Стек</span><span data-lang="en">Stack</span></span>
+        <h2 class="h-section"><span data-lang="ru">Технические навыки</span><span data-lang="en">Technical Skills</span></h2>
+        <p class="section-sub"><span data-lang="ru">Инструменты, с которыми я работаю на практике — от API и баз данных до деплоя в продакшн.</span><span data-lang="en">Tools I work with in practice — from APIs and databases to production deployment.</span></p>
       </div>
       <div class="skills-grid">
         <div class="card hoverable skill reveal">
@@ -404,20 +423,20 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
           <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
         </div>
         <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">🗄️</span>Базы данных</h3>
+          <h3><span class="ic" aria-hidden="true">🗄️</span><span data-lang="ru">Базы данных</span><span data-lang="en">Databases</span></h3>
           <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">SQL</span></div>
         </div>
         <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">🚀</span>DevOps / Инструменты</h3>
+          <h3><span class="ic" aria-hidden="true">🚀</span><span data-lang="ru">DevOps / Инструменты</span><span data-lang="en">DevOps / Tools</span></h3>
           <div class="chips"><span class="chip">Docker</span><span class="chip">Railway</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">PyCharm</span></div>
         </div>
         <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">🧠</span>AI / Нейросети</h3>
-          <div class="chips"><span class="chip">Gemini API</span><span class="chip">Интеграция AI</span></div>
+          <h3><span class="ic" aria-hidden="true">🧠</span><span data-lang="ru">AI / Нейросети</span><span data-lang="en">AI / ML</span></h3>
+          <div class="chips"><span class="chip">Gemini API</span><span class="chip"><span data-lang="ru">Интеграция AI</span><span data-lang="en">AI Integration</span></span></div>
         </div>
         <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">✦</span>Дополнительно</h3>
-          <div class="chips"><span class="chip">Работа с документацией</span><span class="chip">Базовый английский</span></div>
+          <h3><span class="ic" aria-hidden="true">✦</span><span data-lang="ru">Дополнительно</span><span data-lang="en">Also</span></h3>
+          <div class="chips"><span class="chip"><span data-lang="ru">Работа с документацией</span><span data-lang="en">Reading tech docs</span></span><span class="chip">English (B1)</span></div>
         </div>
       </div>
     </div>
@@ -427,9 +446,9 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
   <section class="block" id="projects">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Работы</span>
-        <h2 class="h-section">Проекты</h2>
-        <p class="section-sub">Реальные приложения, которые я спроектировал, собрал и задеплоил самостоятельно.</p>
+        <span class="eyebrow"><span data-lang="ru">Работы</span><span data-lang="en">Work</span></span>
+        <h2 class="h-section"><span data-lang="ru">Проекты</span><span data-lang="en">Projects</span></h2>
+        <p class="section-sub"><span data-lang="ru">Реальные приложения, которые я спроектировал, собрал и задеплоил самостоятельно.</span><span data-lang="en">Real applications I designed, built, and deployed on my own.</span></p>
       </div>
       <div class="proj-grid">
 
@@ -440,7 +459,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
               <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <div class="tech"><span>FastAPI</span><span>PostgreSQL</span><span>Railway</span><span>Chart.js</span></div>
-            <p>Парсер вакансий HH.ru, FL.ru, Upwork и Kwork. Нейросеть автоматически пишет отклик под каждую вакансию. REST API и визуализация данных.</p>
+            <p><span data-lang="ru">Парсер вакансий HH.ru, FL.ru, Upwork и Kwork. Нейросеть автоматически пишет отклик под каждую вакансию. REST API и визуализация данных.</span><span data-lang="en">Job vacancy parser for HH.ru, FL.ru, Upwork & Kwork with AI-powered cover letter generation, REST API backend, and data visualization dashboard.</span></p>
             <span class="link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>job_analyzer1</span>
           </article>
         </a>
@@ -452,7 +471,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
               <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <div class="tech"><span>Python</span><span>aiogram</span><span>SQLite</span><span>Gemini Flash</span><span>Railway</span></div>
-            <p>Telegram-бот для управления записями клиентов салона: расписание, каталог услуг, оплата СБП. Работает в продакшне.</p>
+            <p><span data-lang="ru">Telegram-бот для управления записями клиентов салона: расписание, каталог услуг, оплата СБП. Работает в продакшне.</span><span data-lang="en">Production Telegram bot for nail salon client management: appointment scheduling, service catalog, payment integration, AI chatbot. Live in production.</span></p>
             <span class="link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>nail-salon-bot</span>
           </article>
         </a>
@@ -464,7 +483,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
               <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <div class="tech"><span>Python</span><span>Cloudflare Workers</span><span>VLESS</span></div>
-            <p>Бот для раздачи персональных VPN-конфигов. Система одобрения пользователей, VLESS через Cloudflare Workers.</p>
+            <p><span data-lang="ru">Бот для раздачи персональных VPN-конфигов. Система одобрения пользователей, VLESS через Cloudflare Workers.</span><span data-lang="en">Telegram bot for distributing personalized VPN configurations with user approval workflow and VLESS tunneling via Cloudflare Workers.</span></p>
             <span class="link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>vpn-bot</span>
           </article>
         </a>
@@ -476,7 +495,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
               <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
             <div class="tech"><span>Python</span><span>aiogram</span><span>Gemini Flash</span></div>
-            <p>Демо-версия для презентации клиентам: карусель примеров работ, каталог услуг, оплата СБП.</p>
+            <p><span data-lang="ru">Демо-версия для презентации клиентам: карусель примеров работ, каталог услуг, оплата СБП.</span><span data-lang="en">Demo version for client presentations: media carousel, service catalog, payment integration, AI chatbot.</span></p>
             <span class="link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>demonail-salon-bot</span>
           </article>
         </a>
@@ -489,15 +508,15 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
   <section class="block" id="achievements">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Признание</span>
-        <h2 class="h-section">Достижения <span class="h-serif">и конкурсы</span></h2>
+        <span class="eyebrow"><span data-lang="ru">Признание</span><span data-lang="en">Recognition</span></span>
+        <h2 class="h-section"><span data-lang="ru">Достижения <span class="h-serif">и конкурсы</span></span><span data-lang="en">Achievements <span class="h-serif">&amp; competitions</span></span></h2>
       </div>
       <div class="card hoverable reveal">
         <div class="ach">
           <span class="medal" aria-hidden="true">🏆</span>
           <div>
             <h3>Blue Ocean Student Entrepreneur Competition</h3>
-            <p>Крупнейший мировой конкурс питчей для студентов. Спонсоры: Harvard Business Review, Morgan Stanley, General Atlantic, INSEAD.</p>
+            <p><span data-lang="ru">Крупнейший мировой конкурс питчей для студентов. Спонсоры: Harvard Business Review, Morgan Stanley, General Atlantic, INSEAD.</span><span data-lang="en">World's largest student pitch competition. Backed by Harvard Business Review, Morgan Stanley, General Atlantic, and INSEAD.</span></p>
           </div>
         </div>
       </div>
@@ -508,17 +527,17 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
   <section class="block" id="education">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Путь</span>
-        <h2 class="h-section">Образование <span class="h-serif">и курсы</span></h2>
+        <span class="eyebrow"><span data-lang="ru">Путь</span><span data-lang="en">Background</span></span>
+        <h2 class="h-section"><span data-lang="ru">Образование <span class="h-serif">и курсы</span></span><span data-lang="en">Education <span class="h-serif">&amp; courses</span></span></h2>
       </div>
       <div class="timeline reveal">
         <div class="edu">
-          <h3>Среднее специальное (не окончено) — IT-специальность</h3>
-          <p>РАНХиГС СПб, факультет информационных систем и программирования.</p>
+          <h3><span data-lang="ru">Среднее специальное (не окончено) — IT-специальность</span><span data-lang="en">IT Degree (incomplete) — Information Systems &amp; Programming</span></h3>
+          <p><span data-lang="ru">РАНХиГС СПб, факультет информационных систем и программирования.</span><span data-lang="en">RANEPA St. Petersburg, Faculty of Information Systems and Programming.</span></p>
         </div>
         <div class="edu">
-          <h3>Академия ТОП — курс программирования</h3>
-          <p>Python, C, C#, C++, Java, HTML, CSS. Алгоритмизация, фронтенд- и бэкенд-разработка.</p>
+          <h3><span data-lang="ru">Академия ТОП — курс программирования</span><span data-lang="en">TOP Academy — Programming Course</span></h3>
+          <p><span data-lang="ru">Python, C, C#, C++, Java, HTML, CSS. Алгоритмизация, фронтенд- и бэкенд-разработка.</span><span data-lang="en">Python, C, C#, C++, Java, HTML, CSS. Algorithms, frontend &amp; backend development.</span></p>
         </div>
       </div>
     </div>
@@ -528,9 +547,9 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
   <section class="block" id="contacts">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">На связи</span>
-        <h2 class="h-section">Контакты <span class="h-serif">для связи</span></h2>
-        <p class="section-sub">Открыт к стажировке и Junior-позициям — напишите мне напрямую.</p>
+        <span class="eyebrow"><span data-lang="ru">На связи</span><span data-lang="en">Contact</span></span>
+        <h2 class="h-section"><span data-lang="ru">Контакты <span class="h-serif">для связи</span></span><span data-lang="en">Get <span class="h-serif">in touch</span></span></h2>
+        <p class="section-sub"><span data-lang="ru">Открыт к удалённой работе full-time или по контракту — напишите мне напрямую.</span><span data-lang="en">Available for remote work worldwide — full-time or contract. Let's talk.</span></p>
       </div>
       <div class="contact-grid">
         <a class="card hoverable contact-card reveal" href="https://t.me/fukdat" target="_blank" rel="noopener">
@@ -553,7 +572,7 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
 
 <footer class="foot">
   <div class="wrap">
-    <p>© <span id="yr"></span> fukdat<span class="dot" aria-hidden="true"></span>Вадим<span class="dot" aria-hidden="true"></span>Backend &amp; Mobile Developer</p>
+    <p>© <span id="yr"></span> fukdat<span class="dot" aria-hidden="true"></span>Vadim<span class="dot" aria-hidden="true"></span>Python &amp; React Native Developer<span class="dot" aria-hidden="true"></span><span data-lang="ru">Удалёнка</span><span data-lang="en">Remote</span></p>
   </div>
 </footer>
 
@@ -589,6 +608,29 @@ section{scroll-margin-top:calc(var(--nav-h) + 18px)}
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
   revealEls.forEach(function(el){ io.observe(el); });
+})();
+
+// Language toggle
+function toggleLang() {
+  var body = document.body;
+  var btn = document.getElementById('langToggle');
+  var isEn = body.classList.contains('lang-en');
+  body.classList.toggle('lang-ru', isEn);
+  body.classList.toggle('lang-en', !isEn);
+  btn.textContent = isEn ? 'EN' : 'RU';
+  document.documentElement.lang = isEn ? 'ru' : 'en';
+  try { localStorage.setItem('lang', isEn ? 'ru' : 'en'); } catch(e) {}
+}
+(function() {
+  var saved;
+  try { saved = localStorage.getItem('lang'); } catch(e) {}
+  if (saved === 'en') {
+    document.body.classList.remove('lang-ru');
+    document.body.classList.add('lang-en');
+    document.documentElement.lang = 'en';
+    var btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = 'RU';
+  }
 })();
 </script>
 
