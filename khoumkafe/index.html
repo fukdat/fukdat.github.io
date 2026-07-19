@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ХоумКафе — семейное кафе в Старом Петергофе · ул. Шахматова, 14к1</title>
+<meta name="description" content="ХоумКафе (Тепло) — семейное кафе в Старом Петергофе: один зал и четыре страны — Ирландия, Греция, Прованс и Скандинавия. Детская комната, банкеты до 70 гостей, хиты мировой кухни. Ул. Шахматова, 14, корп. 1, второй этаж.">
+<meta name="theme-color" content="#F6EDDF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ХоумКафе — семейное кафе в Старом Петергофе">
+<meta property="og:description" content="Один зал — четыре страны. Детская комната, хиты мировой кухни, банкеты до 70 гостей. Рейтинг 5,0 на Яндекс.Картах.">
+<meta property="og:locale" content="ru_RU">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6 6 28h7v28h38V28h7z' fill='%239C2B33'/%3E%3Cpath d='M26 34c0-2 12-2 12 0v14H26z' fill='%23F6EDDF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Golos+Text:wght@400..700&family=Caveat:wght@500;600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "ХоумКафе",
+  "alternateName": "Home Cafe (Тепло)",
+  "servesCuisine": ["Европейская", "Домашняя", "Мировая"],
+  "telephone": "+7 921 780-64-98",
+  "priceRange": "₽₽",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Шахматова, 14, корп. 1",
+    "addressLocality": "Петергоф",
+    "addressRegion": "Санкт-Петербург",
+    "addressCountry": "RU"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"], "opens": "12:00", "closes": "22:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "12:00", "closes": "23:00"}
+  ],
+  "sameAs": ["https://vk.com/homecafepeterhof", "https://yandex.ru/maps/org/khoumkafe/1232867026/"]
+}
+</script>
+<style>
+/* ============================================================
+   ХоумКафе · дизайн-система
+   палитра: бисквит / эспрессо / брусника / шалфей / мёд
+   шрифты: Vollkorn (дисплей) · Golos Text (текст) · Caveat (пометки)
+   ============================================================ */
+:root{
+  --paper:#F6EDDF;          /* бисквит — тёплая основа */
+  --paper-2:#EFE3D0;        /* тон глубже — секции */
+  --card:#FDF8EE;           /* карточки */
+  --ink:#34251C;            /* эспрессо */
+  --ink-2:#6B594C;          /* приглушённый текст */
+  --ink-3:#96836F;          /* подписи */
+  --line:rgba(52,37,28,.16);
+  --line-soft:rgba(52,37,28,.09);
+
+  --brusnika:#9C2B33;       /* брусника — главный акцент */
+  --brusnika-deep:#7E1F28;
+  --sage:#66754E;           /* шалфей — прованс, живые цветы */
+  --honey:#C4883B;          /* мёд — свечи, вафли */
+  --honey-soft:rgba(196,136,59,.16);
+
+  /* тона залов */
+  --irl:#2F5C41;
+  --gre:#39678A;
+  --prv:#7C6FA0;
+  --sca:#64757F;
+
+  --font-display:'Vollkorn',Georgia,'Times New Roman',serif;
+  --font-body:'Golos Text',-apple-system,'Segoe UI',sans-serif;
+  --font-hand:'Caveat',cursive;
+
+  --r:14px;
+  --r-lg:20px;
+  --maxw:1140px;
+  --gut:clamp(20px,5vw,44px);
+  --shadow:0 18px 44px -22px rgba(52,37,28,.28);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+/* вечер при свечах */
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#211A13;
+    --paper-2:#2A2119;
+    --card:#2E241B;
+    --ink:#F1E4D2;
+    --ink-2:#C4B09B;
+    --ink-3:#94816C;
+    --line:rgba(241,228,210,.18);
+    --line-soft:rgba(241,228,210,.09);
+    --brusnika:#D8767C;
+    --brusnika-deep:#E2949A;
+    --sage:#93A275;
+    --honey:#D9A05B;
+    --honey-soft:rgba(217,160,91,.14);
+    --irl:#6FA184;
+    --gre:#7FA9C9;
+    --prv:#AC9FCC;
+    --sca:#9AACB6;
+    --shadow:0 18px 44px -22px rgba(0,0,0,.5);
+  }
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--brusnika);color:var(--card)}
+
+.skip{
+  position:absolute;left:-999px;top:8px;z-index:99;
+  background:var(--ink);color:var(--paper);
+  padding:10px 18px;border-radius:8px;text-decoration:none;
+}
+.skip:focus{left:8px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+
+/* ------------------------------------------------ типографика */
+h1,h2,h3{font-family:var(--font-display);line-height:1.12;text-wrap:balance}
+h1{font-size:clamp(2.6rem,7.2vw,4.9rem);font-weight:900}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}
+h3{font-size:1.28rem;font-weight:700}
+.eyebrow{
+  font-size:.78rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brusnika);
+}
+.hand{
+  font-family:var(--font-hand);font-weight:600;
+  font-size:1.45rem;line-height:1.25;color:var(--sage);
+  transform:rotate(-1.4deg);
+}
+.lead{font-size:clamp(1.05rem,1.8vw,1.22rem);color:var(--ink-2);max-width:34em}
+
+/* ------------------------------------------------ навигация */
+.nav{
+  position:sticky;top:0;z-index:40;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-soft);
+}
+.nav-in{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);
+  height:66px;display:flex;align-items:center;gap:24px;
+}
+.logo{
+  font-family:var(--font-display);font-weight:900;font-size:1.35rem;
+  text-decoration:none;letter-spacing:.01em;
+}
+.logo em{font-style:italic;color:var(--brusnika)}
+.nav-links{display:flex;gap:4px;margin-left:auto;list-style:none}
+.nav-links a{
+  text-decoration:none;font-size:.94rem;font-weight:500;color:var(--ink-2);
+  padding:8px 13px;border-radius:9px;transition:color .2s,background .2s;
+}
+.nav-links a:hover{color:var(--ink);background:var(--line-soft)}
+.nav-tel{
+  margin-left:8px;white-space:nowrap;
+  font-weight:600;font-size:.94rem;text-decoration:none;
+  color:var(--card);background:var(--brusnika);
+  padding:10px 18px;border-radius:999px;
+  transition:background .2s,transform .2s;
+}
+.nav-tel:hover{background:var(--brusnika-deep);transform:translateY(-1px)}
+@media(max-width:840px){
+  .nav-links{display:none}
+}
+
+/* ------------------------------------------------ герой */
+.hero{position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(52em 30em at 84% -8%, var(--honey-soft), transparent 60%),
+    radial-gradient(36em 24em at -12% 108%, var(--honey-soft), transparent 65%);
+}
+.hero-in{
+  position:relative;
+  padding:clamp(64px,10vw,120px) 0 clamp(48px,7vw,84px);
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+  gap:clamp(28px,5vw,64px);align-items:end;
+}
+.hero .eyebrow{display:block;margin-bottom:18px}
+.hero h1{margin-bottom:22px}
+.hero h1 .warm{
+  font-style:italic;color:var(--brusnika);
+  background-image:linear-gradient(var(--honey),var(--honey));
+  background-repeat:no-repeat;background-size:100% .09em;background-position:0 92%;
+}
+.hero .lead{margin-bottom:34px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  text-decoration:none;font-weight:600;font-size:1.02rem;
+  padding:15px 28px;border-radius:999px;
+  transition:transform .25s var(--ease),background .2s,box-shadow .25s;
+}
+.btn-main{background:var(--brusnika);color:var(--card);box-shadow:var(--shadow)}
+.btn-main:hover{background:var(--brusnika-deep);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink-2);transform:translateY(-2px)}
+.hero-note{margin-top:20px;max-width:20em}
+.hero-note svg{display:inline-block;vertical-align:-6px;margin-right:6px}
+
+/* факты у героя */
+.hero-facts{
+  display:grid;gap:0;align-self:end;
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  background:var(--card);box-shadow:var(--shadow);overflow:hidden;
+}
+.fact{padding:18px 22px;display:flex;gap:14px;align-items:baseline}
+.fact + .fact{border-top:1px dashed var(--line)}
+.fact b{
+  font-family:var(--font-display);font-weight:900;font-size:1.7rem;
+  color:var(--brusnika);font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.fact span{font-size:.92rem;color:var(--ink-2);line-height:1.4}
+@media(max-width:900px){
+  .hero-in{grid-template-columns:1fr}
+  .hero-facts{max-width:440px}
+}
+
+/* ------------------------------------------------ секции */
+section{padding:clamp(56px,9vw,104px) 0}
+.sec-head{max-width:44em;margin-bottom:clamp(30px,5vw,52px)}
+.sec-head .eyebrow{display:block;margin-bottom:12px}
+.sec-head p{color:var(--ink-2);margin-top:14px}
+.alt{background:var(--paper-2)}
+
+/* ------------------------------------------------ залы */
+.zones{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.zone{
+  --tint:var(--sage);
+  background:var(--card);border:1px solid var(--line-soft);
+  border-radius:var(--r-lg);padding:26px 24px 28px;
+  position:relative;overflow:hidden;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.zone::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  background:var(--tint);
+}
+.zone:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.zone svg{width:44px;height:44px;margin-bottom:16px;color:var(--tint)}
+.zone h3{margin-bottom:8px}
+.zone .geo{
+  font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tint);display:block;margin-bottom:6px;
+}
+.zone p{font-size:.95rem;color:var(--ink-2);line-height:1.55}
+.zone-irl{--tint:var(--irl)}
+.zone-gre{--tint:var(--gre)}
+.zone-prv{--tint:var(--prv)}
+.zone-sca{--tint:var(--sca)}
+.zone-kids{
+  grid-column:1/-1;--tint:var(--honey);
+  display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;
+}
+.zone-kids svg{margin:0}
+.zone-kids .hand{color:var(--honey);white-space:nowrap}
+@media(max-width:960px){.zones{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){
+  .zones{grid-template-columns:1fr}
+  .zone-kids{grid-template-columns:auto 1fr}
+  .zone-kids .hand{display:none}
+}
+
+/* ------------------------------------------------ меню */
+.menu-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(28px,5vw,64px);
+}
+.menu-col{min-width:0}
+.menu-cat{
+  font-family:var(--font-display);font-style:italic;font-weight:700;
+  font-size:1.35rem;margin:34px 0 14px;color:var(--ink);
+  display:flex;align-items:center;gap:14px;
+}
+.menu-cat:first-child{margin-top:0}
+.menu-cat::after{content:"";flex:1;height:1px;background:var(--line)}
+.dish{display:flex;align-items:baseline;gap:10px;padding:9px 0}
+.dish-name{font-weight:500}
+.dish-note{display:block;font-size:.85rem;color:var(--ink-3);font-weight:400}
+.dish-dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px);min-width:24px}
+.dish-price{
+  font-family:var(--font-display);font-weight:700;font-size:1.05rem;
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.badge{
+  display:inline-block;font-size:.72rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--brusnika);border:1px solid currentColor;
+  border-radius:999px;padding:2px 9px;margin-left:8px;vertical-align:2px;
+}
+.menu-foot{
+  margin-top:38px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:10px 28px;align-items:baseline;justify-content:space-between;
+}
+.menu-foot .hand{transform:rotate(-1deg)}
+.menu-foot small{color:var(--ink-3);font-size:.86rem}
+@media(max-width:760px){.menu-grid{grid-template-columns:1fr}}
+
+/* ------------------------------------------------ поводы / банкеты */
+.occasions{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,60px);align-items:center}
+.occ-list{list-style:none;display:grid;gap:6px;margin-top:26px}
+.occ-list li{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:16px 0;border-bottom:1px dashed var(--line);
+}
+.occ-list li:last-child{border-bottom:none}
+.occ-list svg{flex:none;width:26px;height:26px;color:var(--brusnika);margin-top:2px}
+.occ-list b{display:block;font-weight:600}
+.occ-list span{font-size:.93rem;color:var(--ink-2)}
+.occ-card{
+  background:var(--card);border:1px solid var(--line-soft);border-radius:var(--r-lg);
+  padding:clamp(28px,4vw,44px);box-shadow:var(--shadow);position:relative;
+}
+.occ-card .big{
+  font-family:var(--font-display);font-weight:900;
+  font-size:clamp(3.4rem,6vw,5rem);line-height:1;color:var(--brusnika);
+  font-variant-numeric:tabular-nums;
+}
+.occ-card p{color:var(--ink-2);margin-top:10px}
+.occ-card .btn{margin-top:26px}
+.occ-card .hand{position:absolute;top:-16px;right:22px;color:var(--honey)}
+@media(max-width:860px){.occasions{grid-template-columns:1fr}}
+
+/* ------------------------------------------------ отзывы */
+.ratings{
+  display:flex;flex-wrap:wrap;gap:14px;margin-bottom:clamp(30px,5vw,48px);
+}
+.rating{
+  flex:1 1 240px;background:var(--card);border:1px solid var(--line-soft);
+  border-radius:var(--r);padding:18px 22px;
+  display:flex;align-items:center;gap:16px;
+}
+.rating b{
+  font-family:var(--font-display);font-weight:900;font-size:2rem;
+  color:var(--brusnika);font-variant-numeric:tabular-nums;
+}
+.rating span{font-size:.88rem;color:var(--ink-2);line-height:1.4}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.quote{
+  background:var(--card);border:1px solid var(--line-soft);
+  border-radius:var(--r-lg);padding:26px 26px 22px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.quote p{
+  font-family:var(--font-display);font-style:italic;
+  font-size:1.12rem;line-height:1.5;flex:1;
+}
+.quote p::before{content:"« "}
+.quote p::after{content:" »"}
+.quote cite{font-style:normal;font-size:.85rem;color:var(--ink-3)}
+@media(max-width:820px){.quotes{grid-template-columns:1fr}}
+
+/* ------------------------------------------------ контакты */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,56px)}
+.c-block{margin-bottom:26px}
+.c-block .eyebrow{display:block;margin-bottom:8px;color:var(--sage)}
+.c-block p,.c-block a{font-size:1.06rem}
+.c-block a{color:var(--brusnika);text-decoration-thickness:1px;text-underline-offset:3px}
+.hours{width:100%;border-collapse:collapse;max-width:22em}
+.hours td{padding:7px 0;border-bottom:1px dashed var(--line);font-variant-numeric:tabular-nums}
+.hours td:last-child{text-align:right;font-weight:600}
+.map{
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  overflow:hidden;box-shadow:var(--shadow);min-height:380px;background:var(--paper-2);
+}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+
+/* ------------------------------------------------ футер */
+footer{
+  border-top:1px solid var(--line-soft);
+  padding:34px 0 44px;color:var(--ink-3);font-size:.9rem;
+}
+.foot-in{display:flex;flex-wrap:wrap;gap:14px 30px;align-items:baseline;justify-content:space-between}
+footer a{color:var(--ink-2)}
+footer .hand{font-size:1.3rem}
+
+/* ------------------------------------------------ появление */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn,.zone,.nav-tel{transition:none}
+}
+:focus-visible{outline:2.5px solid var(--brusnika);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+
+<nav class="nav" aria-label="Основная навигация">
+  <div class="nav-in">
+    <a class="logo" href="#">Хоум<em>Кафе</em></a>
+    <ul class="nav-links">
+      <li><a href="#zaly">Залы</a></li>
+      <li><a href="#menu">Меню</a></li>
+      <li><a href="#banket">Праздники</a></li>
+      <li><a href="#otzyvy">Отзывы</a></li>
+      <li><a href="#kontakty">Контакты</a></li>
+    </ul>
+    <a class="nav-tel" href="tel:+79217806498">+7 921 780-64-98</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============================== ГЕРОЙ -->
+<header class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <span class="eyebrow reveal">Старый Петергоф · ул. Шахматова, 14, корп. 1</span>
+      <h1 class="reveal">Кафе, в котором <span class="warm">тепло</span> — как дома</h1>
+      <p class="lead reveal">Семейное кафе на втором этаже со своим входом: один зал,
+      четыре страны и детская комната, где ребёнку интереснее, чем взрослым за столом.
+      Готовим хиты мировой кухни — от том-яма до сырников.</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-main" href="tel:+79217806498">Забронировать стол</a>
+        <a class="btn btn-ghost" href="https://vk.com/homecafepeterhof" rel="noopener">Мы во ВКонтакте</a>
+      </div>
+      <p class="hand hero-note reveal">
+        <svg width="26" height="20" viewBox="0 0 26 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 17C7 15 10 10 11 3m0 0-4 3m4-3 3 4"/></svg>
+        в пятницу вечером аншлаг — лучше позвонить заранее
+      </p>
+    </div>
+    <aside class="hero-facts reveal" aria-label="Кафе в цифрах">
+      <div class="fact"><b>5,0</b><span>рейтинг на Яндекс.Картах — 780 отзывов и знак «Хорошее место»</span></div>
+      <div class="fact"><b>№1</b><span>из 53 заведений Петергофа по версии гостей Tripadvisor</span></div>
+      <div class="fact"><b>12–22</b><span>работаем каждый день, в пятницу и субботу — до 23:00</span></div>
+    </aside>
+  </div>
+</header>
+
+<!-- ============================== ЗАЛЫ -->
+<section id="zaly" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Залы</span>
+      <h2>Один зал — четыре страны</h2>
+      <p>Зал разделён на уголки-«географии»: каждый со своим настроением.
+      Садитесь туда, куда сегодня хочется уехать, — а живые цветы здесь повсюду.</p>
+    </div>
+    <div class="zones">
+      <article class="zone zone-irl reveal">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 25c-5-1-8-5-7-10 4-1 8 1 9 5 1-4 5-6 9-5 1 5-2 9-7 10h-4z"/><path d="M22 25v10m0-4c-3 3-7 3-9 1m9-1c3 3 7 3 9 1"/></svg>
+        <span class="geo">Ирландия</span>
+        <h3>Паб-уголок</h3>
+        <p>Тёмное дерево и разговоры до закрытия. Место для дружеских вечеров и матчей, которые нельзя смотреть в одиночку.</p>
+      </article>
+      <article class="zone zone-gre reveal">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20c6-8 22-8 28 0M8 20c2 1 4 1 6 0 2 1 4 1 6 0 2 1 4 1 6 0 2 1 4 1 6 0 2 1 3 1 4 0M14 22v12m8-12v12m8-12v12M10 34h24"/></svg>
+        <span class="geo">Греция</span>
+        <h3>Островной угол</h3>
+        <p>Белое, синее и никакой спешки. Сюда — за долгим обедом, греческим салатом и ощущением отпуска.</p>
+      </article>
+      <article class="zone zone-prv reveal">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 36V16m0 0c-3-1-5-4-5-8 3 0 6 2 5 8zm0 0c3-1 5-4 5-8-3 0-6 2-5 8zm-6 8c-2-1-4-4-4-7 3 0 5 3 4 7zm12 0c2-1 4-4 4-7-3 0-5 3-4 7zM16 36h12"/></svg>
+        <span class="geo">Прованс</span>
+        <h3>Цветочный уголок</h3>
+        <p>Самое фотографируемое место в кафе: пастель, букеты и мягкий свет. Идеально для свиданий и «просто кофе с подругой».</p>
+      </article>
+      <article class="zone zone-sca reveal">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 6 12 20h5l-7 10h8v8h8v-8h8l-7-10h5L22 6z"/></svg>
+        <span class="geo">Скандинавия</span>
+        <h3>Хюгге-уголок</h3>
+        <p>Светлое дерево, пледы и минимум лишнего. Уголок для тех, кто пришёл с книгой или ноутбуком — и остался до вечера.</p>
+      </article>
+      <article class="zone zone-kids reveal">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 34c0-8 4-12 12-12s12 4 12 12M22 22a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/><path d="M6 28l4-2m28 2-4-2"/></svg>
+        <div>
+          <span class="geo">Пятая страна — детская</span>
+          <h3>Детская комната</h3>
+          <p>Отдельная игровая и своя обеденная зона: дети играют и едят на своей территории, взрослые спокойно доедают горячим. Приходить можно и с собакой — мы dog-friendly.</p>
+        </div>
+        <span class="hand">дети заняты —<br>вы отдыхаете</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== МЕНЮ -->
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Меню</span>
+      <h2>Хиты мировой кухни</h2>
+      <p>Меню собрано из блюд-бестселлеров разных стран — и дополняется сезонными:
+      весной здесь очередь за корюшкой. Средний чек — около 1000–1500 ₽.</p>
+    </div>
+    <!-- ВАЖНО: цены примерные, для макета. Перед публикацией сверить с актуальным меню заведения. -->
+    <div class="menu-grid">
+      <div class="menu-col reveal">
+        <h3 class="menu-cat">Закуски и салаты</h3>
+        <div class="dish"><span class="dish-name">Жареный сулугуни с брусничным вареньем<span class="dish-note">то самое, ради чего возвращаются</span></span><span class="dish-dots"></span><span class="dish-price">430 ₽</span></div>
+        <div class="dish"><span class="dish-name">Тёплый салат с баклажанами</span><span class="dish-dots"></span><span class="dish-price">460 ₽</span></div>
+        <div class="dish"><span class="dish-name">Греческий салат с фетой</span><span class="dish-dots"></span><span class="dish-price">420 ₽</span></div>
+        <div class="dish"><span class="dish-name">Сельдь с печёным картофелем</span><span class="dish-dots"></span><span class="dish-price">390 ₽</span></div>
+        <h3 class="menu-cat">Супы</h3>
+        <div class="dish"><span class="dish-name">Том-ям с креветками и рисом</span><span class="dish-dots"></span><span class="dish-price">590 ₽</span></div>
+        <div class="dish"><span class="dish-name">Куриный бульон с домашней лапшой</span><span class="dish-dots"></span><span class="dish-price">320 ₽</span></div>
+        <div class="dish"><span class="dish-name">Грибной крем-суп</span><span class="dish-dots"></span><span class="dish-price">380 ₽</span></div>
+        <h3 class="menu-cat">Детям</h3>
+        <div class="dish"><span class="dish-name">Наггетсы с картофелем фри</span><span class="dish-dots"></span><span class="dish-price">320 ₽</span></div>
+        <div class="dish"><span class="dish-name">Блинчики со сгущёнкой</span><span class="dish-dots"></span><span class="dish-price">260 ₽</span></div>
+        <div class="dish"><span class="dish-name">Какао с маршмеллоу</span><span class="dish-dots"></span><span class="dish-price">190 ₽</span></div>
+      </div>
+      <div class="menu-col reveal">
+        <h3 class="menu-cat">Горячее и гриль</h3>
+        <div class="dish"><span class="dish-name">Корюшка с печёным картофелем<span class="badge">сезон: весна</span></span><span class="dish-dots"></span><span class="dish-price">520 ₽</span></div>
+        <div class="dish"><span class="dish-name">Стейк из свиной шеи на гриле</span><span class="dish-dots"></span><span class="dish-price">640 ₽</span></div>
+        <div class="dish"><span class="dish-name">Шашлык из курицы с овощами</span><span class="dish-dots"></span><span class="dish-price">490 ₽</span></div>
+        <div class="dish"><span class="dish-name">Бургер «Хоум» с картофелем фри</span><span class="dish-dots"></span><span class="dish-price">540 ₽</span></div>
+        <div class="dish"><span class="dish-name">Паста карбонара</span><span class="dish-dots"></span><span class="dish-price">480 ₽</span></div>
+        <div class="dish"><span class="dish-name">Куриные крылья BBQ</span><span class="dish-dots"></span><span class="dish-price">430 ₽</span></div>
+        <h3 class="menu-cat">Десерты и напитки</h3>
+        <div class="dish"><span class="dish-name">Бельгийские вафли с мороженым</span><span class="dish-dots"></span><span class="dish-price">360 ₽</span></div>
+        <div class="dish"><span class="dish-name">Сырники со сметаной</span><span class="dish-dots"></span><span class="dish-price">310 ₽</span></div>
+        <div class="dish"><span class="dish-name">Чайник чая с облепихой</span><span class="dish-dots"></span><span class="dish-price">350 ₽</span></div>
+        <div class="dish"><span class="dish-name">Капучино</span><span class="dish-dots"></span><span class="dish-price">190 ₽</span></div>
+      </div>
+    </div>
+    <div class="menu-foot reveal">
+      <span class="hand">полное меню — в группе ВКонтакте</span>
+      <small>Цены указаны ориентировочно и могут меняться. Актуальное меню уточняйте у официанта или по телефону.</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ПРАЗДНИКИ -->
+<section id="banket" class="alt">
+  <div class="wrap occasions">
+    <div class="reveal">
+      <span class="eyebrow">Праздники</span>
+      <h2>Дни рождения, банкеты и «просто повод»</h2>
+      <ul class="occ-list">
+        <li>
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h18v10H4zM4 12l2-5h14l2 5M13 12v10M9 7V4m8 3V4"/></svg>
+          <div><b>Банкеты до 70 гостей</b><span>удобное зонирование позволяет собрать и семейный юбилей, и большой корпоратив</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17c-3 0-5-2-5-5s2-5 5-5c1-3 6-3 7 0 3 0 5 2 5 5s-2 5-5 5M13 20v-8m-3 4 3-3 3 3"/></svg>
+          <div><b>Детские праздники</b><span>своя игровая комната рядом с залом — праздник и родителям, и детям</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 4v3m0 0c-4 0-6 2-6 5v10h12V12c0-3-2-5-6-5zM10 22v-4h6v4M8 12h10"/></svg>
+          <div><b>Караоке и танцпол</b><span>вечером кафе умеет превращаться в место, откуда не хочется уходить</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h18v12H4zM4 19l5-6 4 4 3-3 6 5M9 11h.01"/></svg>
+          <div><b>Кинопоказы</b><span>устраиваем вечера любимых фильмов — следите за афишей в группе ВКонтакте</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="occ-card reveal">
+      <span class="hand">и торт свой принести можно</span>
+      <span class="big">до 70</span>
+      <p>гостей за одним праздником. Расскажите, что вы задумали, — соберём меню
+      под ваш повод и подготовим зал к нужному часу.</p>
+      <a class="btn btn-main" href="tel:+79217806498">Обсудить праздник</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ОТЗЫВЫ -->
+<section id="otzyvy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Отзывы</span>
+      <h2>За нас говорят гости</h2>
+    </div>
+    <div class="ratings reveal">
+      <div class="rating"><b>5,0</b><span>Яндекс.Карты<br>780 отзывов · «Хорошее место»</span></div>
+      <div class="rating"><b>4,8</b><span>Restaurant Guru<br>почти 1500 оценок</span></div>
+      <div class="rating"><b>4,7</b><span>Tripadvisor<br>№1 из 53 заведений Петергофа</span></div>
+    </div>
+    <div class="quotes">
+      <blockquote class="quote reveal">
+        <p>Тепло, действительно тепло и уютно.</p>
+        <cite>— заголовок отзыва гостя на Tripadvisor</cite>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p>Гостеприимство и сервис такие, что хочется возвращаться снова и снова — просто отдохнуть и вкусно поесть.</p>
+        <cite>— из отзывов на Яндекс.Картах</cite>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <p>Уютно, недорого и атмосферно. Кухня отличная, идеальное соотношение цены и качества.</p>
+        <cite>— из отзывов на Restaurant Guru</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== КОНТАКТЫ -->
+<section id="kontakty" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Контакты</span>
+      <h2>Как нас найти</h2>
+      <p>Старый Петергоф, рядом с Луговым парком и Заячьим Ремизом.
+      Вход отдельный, поднимайтесь на второй этаж.</p>
+    </div>
+    <div class="contact">
+      <div class="reveal">
+        <div class="c-block">
+          <span class="eyebrow">Адрес</span>
+          <p>Петергоф, ул. Шахматова, 14, корп. 1<br>второй этаж, отдельный вход</p>
+        </div>
+        <div class="c-block">
+          <span class="eyebrow">Часы работы</span>
+          <table class="hours">
+            <tr><td>Вс — Чт</td><td>12:00 – 22:00</td></tr>
+            <tr><td>Пт — Сб</td><td>12:00 – 23:00</td></tr>
+          </table>
+        </div>
+        <div class="c-block">
+          <span class="eyebrow">Бронь и вопросы</span>
+          <p><a href="tel:+79217806498">+7 921 780-64-98</a></p>
+        </div>
+        <div class="c-block">
+          <span class="eyebrow">Мы в сети</span>
+          <p><a href="https://vk.com/homecafepeterhof" rel="noopener">ВКонтакте: vk.com/homecafepeterhof</a><br>
+          <a href="https://yandex.ru/maps/org/khoumkafe/1232867026/" rel="noopener">Мы на Яндекс.Картах</a></p>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe src="https://yandex.ru/map-widget/v1/?ol=biz&amp;oid=1232867026&amp;z=16" title="ХоумКафе на карте — Петергоф, ул. Шахматова, 14к1" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>© <span id="year">2026</span> ХоумКафе · Петергоф, ул. Шахматова, 14, корп. 1</span>
+    <span class="hand">приходите греться</span>
+    <a href="https://vk.com/homecafepeterhof" rel="noopener">ВКонтакте</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const items = document.querySelectorAll('.reveal');
+if (reduce || !('IntersectionObserver' in window)) {
+  items.forEach(el => el.classList.add('in'));
+} else {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  items.forEach((el,i) => { el.style.transitionDelay = (i % 5) * 60 + 'ms'; io.observe(el); });
+}
+</script>
+</body>
+</html>
