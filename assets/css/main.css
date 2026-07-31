@@ -22,7 +22,7 @@
   --micro:clamp(11px,.76vw,13.5px);
   --small:clamp(12.5px,.9vw,15px);
   /* monospace advances ~.6em: the mins keep 16-char lines inside 360px */
-  --display:clamp(2rem,8.4vw,8.6rem);
+  --display:clamp(2rem,8.4vw,10rem);
   --display-sm:clamp(1.55rem,5.4vw,5rem);
   --statement:clamp(1.35rem,3.1vw,3.05rem);
 
