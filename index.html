@@ -3,594 +3,487 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>fukdat — Junior Developer · Python / FastAPI / React Native</title>
-<meta name="description" content="Вадим (fukdat) — начинающий разработчик. Backend на Python и FastAPI, мобильная разработка на React Native, Telegram-боты и интеграция AI. Открыт к стажировке и Junior-позициям.">
-<meta name="author" content="fukdat">
-<meta name="theme-color" content="#0b0b0c">
-<meta name="color-scheme" content="dark">
+<title>$tripple$dallar$ — backend &amp; mobile developer</title>
+<meta name="description" content="$tripple$dallar$ (Вадим) — разработчик. Backend на Python и FastAPI, мобильная разработка на React Native, Telegram-боты, интеграция AI. Открыт к стажировке и Junior-позициям.">
+<meta name="author" content="$tripple$dallar$">
+<meta name="theme-color" content="#e4e2dd">
+<meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
-<meta property="og:title" content="fukdat — Junior Developer">
-<meta property="og:description" content="Backend (Python/FastAPI), мобильная разработка (React Native), Telegram-боты, интеграция AI. Открыт к стажировке и Junior-позициям.">
+<meta property="og:title" content="$tripple$dallar$ — backend & mobile developer">
+<meta property="og:description" content="Backend (Python/FastAPI), мобильная разработка (React Native), Telegram-боты, интеграция AI. Сообщество CodeDM.">
+<meta property="og:url" content="https://fukdat.github.io/">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://fukdat.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b0b'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='30' font-weight='700' text-anchor='middle' fill='%23e4e2dd'%3E%24%24%24%3C/text%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Lora:ital@1&amp;display=swap">
-<style>
-/* ============================================================
-   DESIGN SYSTEM
-   ============================================================ */
-:root{
-  /* surfaces */
-  --bg:#0b0b0c;
-  --bg-2:#0e0e10;
-  --surface:rgba(255,255,255,.035);
-  --surface-2:rgba(255,255,255,.055);
-  --border:rgba(255,255,255,.09);
-  --border-strong:rgba(255,255,255,.14);
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700;800&amp;family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,400&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700;800&amp;family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,400&amp;display=swap">
+<link rel="stylesheet" href="assets/css/main.css">
 
-  /* text */
-  --text:#f1efea;
-  --text-2:#b6b1a9;
-  --text-3:#86817a;
-
-  /* brand */
-  --accent:#ef3b39;
-  --accent-soft:#ff5a52;
-  --accent-deep:#c11c1c;
-  --accent-glow:rgba(239,59,57,.45);
-
-  /* type */
-  --font:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --font-serif:'Lora',Georgia,serif;
-
-  /* radii */
-  --r-sm:12px;
-  --r:16px;
-  --r-lg:22px;
-  --r-pill:999px;
-
-  /* elevation */
-  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
-  --shadow:0 14px 40px -18px rgba(0,0,0,.7),0 2px 8px -4px rgba(0,0,0,.5);
-  --shadow-lg:0 32px 70px -28px rgba(0,0,0,.85),0 8px 24px -12px rgba(0,0,0,.6);
-  --glow:0 0 0 1px var(--border-strong),0 22px 60px -26px var(--accent-glow);
-
-  /* motion */
-  --ease:cubic-bezier(.16,1,.3,1);
-  --ease-soft:cubic-bezier(.4,0,.2,1);
-  --t-fast:.18s;
-  --t:.32s;
-  --t-slow:.6s;
-
-  /* layout */
-  --maxw:1080px;
-  --gut:clamp(20px,5vw,40px);
-  --nav-h:64px;
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--font);
-  font-size:16px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-  overflow-x:hidden;
-}
-a{color:inherit}
-img{display:block;max-width:100%}
-::selection{background:var(--accent);color:#fff}
-
-/* atmospheric background */
-body::before{
-  content:'';position:fixed;inset:0;z-index:-2;
-  background:
-    radial-gradient(60% 50% at 50% -8%,rgba(239,59,57,.10),transparent 60%),
-    radial-gradient(40% 38% at 88% 12%,rgba(239,59,57,.06),transparent 60%),
-    radial-gradient(50% 50% at 8% 88%,rgba(120,120,140,.05),transparent 60%),
-    var(--bg);
-}
-body::after{
-  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.025;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* focus a11y */
-:focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px;border-radius:6px}
-:focus:not(:focus-visible){outline:none}
-
-.skip{
-  position:absolute;left:12px;top:-60px;z-index:200;
-  background:var(--accent);color:#fff;padding:10px 16px;border-radius:var(--r-sm);
-  font-weight:700;font-size:14px;transition:top var(--t) var(--ease);text-decoration:none;
-}
-.skip:focus{top:12px}
-
-.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
-
-/* ============================================================
-   NAV
-   ============================================================ */
-.nav{
-  position:sticky;top:0;z-index:100;height:var(--nav-h);
-  display:flex;align-items:center;
-  background:rgba(11,11,12,.62);
-  backdrop-filter:blur(18px) saturate(150%);
-  -webkit-backdrop-filter:blur(18px) saturate(150%);
-  border-bottom:1px solid var(--border);
-}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
-.brand{font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--text);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-.brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent-glow)}
-.nav-links{display:flex;align-items:center;gap:4px}
-.nav-links a{
-  font-size:13.5px;font-weight:600;color:var(--text-2);text-decoration:none;
-  padding:8px 13px;border-radius:var(--r-pill);
-  transition:color var(--t-fast) var(--ease-soft),background var(--t-fast) var(--ease-soft);
-}
-.nav-links a:hover{color:var(--text);background:var(--surface)}
-.nav-cta{
-  font-size:13.5px;font-weight:700;color:#fff !important;text-decoration:none;
-  padding:9px 16px;border-radius:var(--r-pill);
-  background:linear-gradient(180deg,var(--accent-soft),var(--accent-deep));
-  box-shadow:0 6px 18px -8px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.25);
-  transition:transform var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease);
-}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 26px -8px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.3)}
-.nav-cta:active{transform:translateY(0)}
-@media(max-width:720px){.nav-links a:not(.nav-cta){display:none}}
-
-/* ============================================================
-   SECTION PRIMITIVES
-   ============================================================ */
-section{scroll-margin-top:calc(var(--nav-h) + 18px)}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--accent-soft);margin-bottom:14px;
-}
-.eyebrow::before{content:'';width:22px;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
-.h-section{
-  font-size:clamp(26px,4.4vw,38px);font-weight:800;letter-spacing:-.025em;line-height:1.1;color:#fff;
-}
-.h-serif{font-family:var(--font-serif);font-style:italic;font-weight:400;color:var(--accent-soft)}
-.section-head{margin-bottom:clamp(26px,4vw,42px);max-width:640px}
-.section-sub{color:var(--text-3);font-size:15.5px;margin-top:12px;line-height:1.7}
-.block{padding-block:clamp(56px,9vw,96px)}
-
-/* ============================================================
-   HERO
-   ============================================================ */
-.hero{position:relative;padding-top:clamp(48px,9vw,88px);padding-bottom:clamp(40px,7vw,72px);overflow:hidden}
-.hero-orb{position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none}
-.hero-orb.a{width:440px;height:440px;top:-160px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(239,59,57,.28),transparent 68%);animation:float 14s var(--ease-soft) infinite alternate}
-.hero-orb.b{width:300px;height:300px;bottom:-120px;right:-60px;background:radial-gradient(circle,rgba(239,59,57,.12),transparent 70%);animation:float 18s var(--ease-soft) infinite alternate-reverse}
-@keyframes float{from{transform:translate(-50%,0)}to{transform:translate(-50%,28px)}}
-.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center}
-.avatar{
-  width:104px;height:104px;border-radius:50%;overflow:hidden;
-  padding:3px;background:linear-gradient(145deg,var(--accent-soft),transparent 55%,var(--border-strong));
-  box-shadow:0 20px 50px -18px rgba(0,0,0,.8),0 0 0 1px var(--border);
-  margin-bottom:22px;
-}
-.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:13px;font-weight:600;color:var(--text-2);
-  background:var(--surface);border:1px solid var(--border);
-  padding:7px 14px;border-radius:var(--r-pill);margin-bottom:22px;
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-}
-.badge .pulse{position:relative;width:8px;height:8px;border-radius:50%;background:#46d17f;flex-shrink:0}
-.badge .pulse::after{content:'';position:absolute;inset:0;border-radius:50%;background:#46d17f;animation:pulse 2.2s var(--ease-soft) infinite}
-@keyframes pulse{0%{transform:scale(1);opacity:.7}70%,100%{transform:scale(2.6);opacity:0}}
-.hero-name{font-size:clamp(46px,9vw,84px);font-weight:900;letter-spacing:-.04em;line-height:.95;color:#fff}
-.hero-role{
-  display:block;margin-top:10px;font-size:clamp(15px,2.6vw,19px);font-weight:600;
-  letter-spacing:.02em;color:var(--text-3);
-}
-.hero-role .accent{color:var(--accent-soft)}
-.bio{max-width:600px;margin-top:24px;font-size:clamp(15px,2vw,17px);line-height:1.78;color:var(--text-2)}
-.bio b{color:var(--text);font-weight:700}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
-
-/* buttons */
-.btn{
-  display:inline-flex;align-items:center;gap:9px;
-  font-size:14.5px;font-weight:700;text-decoration:none;cursor:pointer;
-  padding:13px 22px;border-radius:var(--r-pill);border:1px solid transparent;
-  transition:transform var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease),background var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease);
-}
-.btn svg{width:17px;height:17px;flex-shrink:0}
-.btn-primary{
-  color:#fff;background:linear-gradient(180deg,var(--accent-soft),var(--accent-deep));
-  box-shadow:0 12px 30px -12px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.25);
-}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px var(--accent-glow),inset 0 1px 0 rgba(255,255,255,.32)}
-.btn-primary:active{transform:translateY(0)}
-.btn-ghost{color:var(--text);background:var(--surface);border-color:var(--border-strong);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.btn-ghost:hover{transform:translateY(-2px);background:var(--surface-2);border-color:var(--accent);box-shadow:var(--shadow)}
-.btn-ghost:active{transform:translateY(0)}
-
-/* ============================================================
-   CARDS (glass)
-   ============================================================ */
-.card{
-  position:relative;background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r-lg);padding:22px;
-  backdrop-filter:blur(12px) saturate(140%);-webkit-backdrop-filter:blur(12px) saturate(140%);
-  box-shadow:var(--shadow);
-  transition:transform var(--t) var(--ease),border-color var(--t) var(--ease),box-shadow var(--t) var(--ease),background var(--t) var(--ease);
-}
-.card.hoverable:hover{transform:translateY(-5px);border-color:var(--border-strong);background:var(--surface-2);box-shadow:var(--shadow-lg)}
-
-/* skills */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.skill h3{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:#fff;margin-bottom:15px}
-.skill h3 .ic{
-  width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex-shrink:0;
-  background:linear-gradient(145deg,rgba(239,59,57,.22),rgba(239,59,57,.06));
-  border:1px solid rgba(239,59,57,.25);font-size:15px;
-}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chip{
-  font-size:12.5px;font-weight:600;color:var(--text-2);
-  background:rgba(255,255,255,.04);border:1px solid var(--border);
-  padding:6px 12px;border-radius:var(--r-pill);
-  transition:color var(--t-fast) var(--ease-soft),border-color var(--t-fast) var(--ease-soft),transform var(--t-fast) var(--ease);
-}
-.skill:hover .chip{border-color:rgba(239,59,57,.22)}
-.chip:hover{color:var(--text);border-color:var(--accent);transform:translateY(-1px)}
-
-/* projects */
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
-.proj{display:flex;flex-direction:column;overflow:hidden}
-.proj-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px}
-.proj h3{font-size:18px;font-weight:800;letter-spacing:-.01em;color:#fff;line-height:1.25}
-.proj .arrow{
-  width:34px;height:34px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;
-  background:var(--surface);border:1px solid var(--border);color:var(--text-2);
-  transition:transform var(--t) var(--ease),background var(--t) var(--ease),color var(--t) var(--ease),border-color var(--t) var(--ease);
-}
-.proj:hover .arrow{transform:translate(2px,-2px) rotate(-2deg);background:var(--accent);border-color:var(--accent);color:#fff}
-.proj .tech{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}
-.proj .tech span{font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--accent-soft);background:rgba(239,59,57,.09);border:1px solid rgba(239,59,57,.18);padding:4px 9px;border-radius:7px}
-.proj p{font-size:13.5px;line-height:1.66;color:var(--text-2);flex-grow:1}
-.proj .link{
-  display:inline-flex;align-items:center;gap:7px;margin-top:16px;
-  font-size:12.5px;font-weight:700;color:var(--text-3);text-decoration:none;
-  transition:color var(--t-fast) var(--ease-soft);
-}
-.proj .link svg{width:14px;height:14px}
-.proj .link:hover{color:var(--accent-soft)}
-.proj-link-wrap{text-decoration:none;color:inherit;display:flex}
-
-/* achievement */
-.ach{display:flex;align-items:flex-start;gap:16px}
-.ach .medal{font-size:30px;line-height:1;flex-shrink:0;filter:drop-shadow(0 4px 10px rgba(0,0,0,.5))}
-.ach h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-.01em}
-.ach p{font-size:13.5px;line-height:1.66;color:var(--text-2)}
-
-/* education timeline */
-.timeline{position:relative;padding-left:30px}
-.timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--accent),rgba(239,59,57,.05))}
-.edu{position:relative;padding-bottom:26px}
-.edu:last-child{padding-bottom:0}
-.edu::before{
-  content:'';position:absolute;left:-30px;top:5px;width:16px;height:16px;border-radius:50%;
-  background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(239,59,57,.12);
-}
-.edu h3{font-size:16px;font-weight:700;font-style:italic;color:var(--text);margin-bottom:5px}
-.edu p{font-size:13.5px;line-height:1.66;color:var(--text-3);font-style:italic}
-
-/* contacts */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.contact-card{
-  display:flex;align-items:center;gap:14px;text-decoration:none;
-  padding:18px 20px;
-}
-.contact-card .ic{
-  width:44px;height:44px;border-radius:13px;flex-shrink:0;display:grid;place-items:center;
-  background:linear-gradient(145deg,rgba(239,59,57,.2),rgba(239,59,57,.05));
-  border:1px solid rgba(239,59,57,.22);color:var(--accent-soft);
-  transition:transform var(--t) var(--ease),background var(--t) var(--ease),color var(--t) var(--ease);
-}
-.contact-card .ic svg{width:21px;height:21px}
-.contact-card:hover .ic{transform:scale(1.06) rotate(-3deg);background:var(--accent);color:#fff}
-.contact-card .lbl{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);margin-bottom:3px}
-.contact-card .val{font-size:15px;font-weight:700;color:var(--text)}
-
-/* footer */
-.foot{border-top:1px solid var(--border);padding-block:34px;text-align:center}
-.foot p{font-size:13px;color:var(--text-3)}
-.foot .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block;margin:0 8px;vertical-align:middle}
-
-/* ============================================================
-   SCROLL REVEAL
-   ============================================================ */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity var(--t-slow) var(--ease),transform var(--t-slow) var(--ease)}
-.reveal.in{opacity:1;transform:none}
-.hero-inner>*{opacity:0;transform:translateY(22px);animation:enter .85s var(--ease) forwards}
-.hero-inner>*:nth-child(1){animation-delay:.05s}
-.hero-inner>*:nth-child(2){animation-delay:.14s}
-.hero-inner>*:nth-child(3){animation-delay:.23s}
-.hero-inner>*:nth-child(4){animation-delay:.32s}
-.hero-inner>*:nth-child(5){animation-delay:.41s}
-.hero-inner>*:nth-child(6){animation-delay:.5s}
-@keyframes enter{to{opacity:1;transform:none}}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-@media(max-width:560px){
-  .avatar{width:88px;height:88px}
-  .hero-actions{width:100%}
-  .hero-actions .btn{flex:1 1 auto;justify-content:center}
-  .card{padding:18px}
-  .ach{gap:13px}
-}
-
-/* ============================================================
-   REDUCED MOTION
-   ============================================================ */
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
-  .reveal,.hero-inner>*{opacity:1 !important;transform:none !important}
-  .hero-orb{animation:none}
-}
-</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"$tripple$dallar$","alternateName":"Вадим","jobTitle":"Backend & Mobile Developer","url":"https://fukdat.github.io/","sameAs":["https://github.com/fukdat","https://t.me/fukdat","https://vk.ru/codedm"],"knowsAbout":["Python","FastAPI","React Native","PostgreSQL","Docker","aiogram"]}
+</script>
 </head>
 <body>
 
 <a class="skip" href="#main">Перейти к содержимому</a>
 
-<header class="nav">
-  <nav class="nav-inner" aria-label="Основная навигация">
-    <a class="brand" href="#top"><span class="dot" aria-hidden="true"></span>fukdat</a>
-    <div class="nav-links">
-      <a href="#skills">Навыки</a>
-      <a href="#projects">Проекты</a>
-      <a href="#achievements">Достижения</a>
-      <a class="nav-cta" href="#contacts">Связаться</a>
-    </div>
+<!-- ===== PRELOADER ===== -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <span class="loader__mark">$$$</span>
+    <span class="loader__count"><span id="loaderNum">000</span></span>
+  </div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+</div>
+
+<!-- ===== CURSOR ===== -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"><span class="cursor__label"></span></div>
+</div>
+
+<!-- ===== PROJECT PREVIEW FOLLOWER ===== -->
+<div class="peek" id="peek" aria-hidden="true">
+  <div class="peek__inner"><span class="peek__idx"></span><span class="peek__stack"></span></div>
+</div>
+
+<!-- ===== SCROLL PROGRESS ===== -->
+<div class="progress" id="progress" aria-hidden="true"><i></i></div>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <a class="nav__mark" href="#top" data-magnetic data-cursor="вверх">
+    <span class="nav__mark-txt">$$$</span>
+  </a>
+  <nav class="nav__links" aria-label="Основная навигация">
+    <a class="pill pill--hide-xs" href="#work" data-magnetic><span>Работы</span></a>
+    <a class="pill pill--hide-xs" href="#about" data-magnetic><span>Обо мне</span></a>
+    <a class="pill pill--hide-sm" href="#stack" data-magnetic><span>Стек</span></a>
+    <a class="pill pill--hide-sm" href="#path" data-magnetic><span>Путь</span></a>
+    <a class="pill" href="#community" data-magnetic><span>Community</span><i class="pill__badge">new</i></a>
+    <a class="pill pill--solid" href="#contact" data-magnetic><span>Связаться</span></a>
   </nav>
 </header>
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-orb a" aria-hidden="true"></div>
-    <div class="hero-orb b" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="hero-inner">
-        <div class="avatar"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wgARCADwAPADASIAAhEBAxEB/8QAHAAAAgIDAQEAAAAAAAAAAAAABAUDBgECBwAI/8QAGgEAAwEBAQEAAAAAAAAAAAAAAAECAwQFBv/aAAwDAQACEAMQAAABs2wPvnfRsO9ZsvSIQ56+bMOjc76R1cmx4J3Tzc1qjKjcHWeti1ZvKGRqPIIvQE2cDTUZwF7k1Qg3Ia1e6UdlVGnj6ZL7rwjszzsO1qm8fequSF+4tplxRx0HXLkFt2w6Fsgl6OXk1C7QPy9HJde1k6PiBfVBmcwtNm0QhmCmGcAZG5AzIYgnn9/5dSBh9FuMulch69eXW5JtuCw4N10VomxtG9RmbIKuU1U1ucutsPKVO8WOaYE7R6U5KTlSFnGTqUADurttHAjSIG5NdauxZrHauoWXyOrqe6OPn9XybfQ4/wA4NrO5A0fXN2OGczPRcxwRec4o+bicDEYwtI2tFaAdEjUNvBiPo7ivWrPAuV5TMqY2/dLN1yGwgaCGiaZZPnprBLFb6IgrTxTb3K2tZror3ll9w0IJla1nTMQJlpG0pmdE4f8ALFemfWFnOdrV51pOjXTx+YkKepVutGlbhGnt1tlcShcx3zLOkMe8LnPtdXDTC3V17qfKTEvrIrmDHKVPPbnRDTCIOPfOXTGtIzIugp4tfNZ97wZxjAdBs3HSM7uldU7OiTISctQgbElsFznFYymCSGmV9krxOnrTGZ1jfSaljE2hcGceeWfY8P2Jsoh9PkcGCcBCyBs02l890m5G0dn596CufqdJV6n+0ldNJqycbUwnuEBTTjr5zBu9I7MjYfQVUGJNXhrn24ic4kV4k9MPTxWiaztfNu9wq1pcIpOMdApfT+bq5vXeloKqneskNlaGtKW5RXdrac008hT40s5r2GtdOND9Pt0SNg7ZSskO81pJvKnrMQUmKve1gTn6P4D32URodG45Zu5N4OxGtsNeoHSWBq6onQs4l7PE+zyLS4TF3hOMRWfH3Nwoe6LFfDsQ6u9HKghoQC404QE9WdwXL7vvDe45jSPaO8+eukVr8/sstcs6/o56poxFw2CHawjB9JsxXC91GoKYxORQGkLnmW3R0OyBmqgdK+bUuFjyrOW9KoF2VKqt/ZeTdYWckG41zzy3iFcPTbhM69GCZTYl3PpWEdvWRrTVV0H1FsZy6lU7iAzufUq27tDAvBZdYZuyqkY2WRCZDbq/YBrnRvonSuQdHnN+NDvpEVbMX8fTcphZdMsikRICBbwZ0mgcQpqIHcLEejWFtdC0iYt2P3aW7n4pBaGA2gKy5R1W4xS1jroPLLxKuEtUkJbB+j5em5skTnXnlxr5zHDPhMSIjSQbSfAwoDomB6HZaAwZqwSA8ehckb1ptFn2aodcSJYY6rz+QrZEei8iFq+Te4WSg2u8XGA97zIxHsLEc0QQxzDI0izqP2Nomb+jipbBTjMWVl3Wy4VU623sN6O0QclLaPJALR//xAApEAACAgICAgICAgMBAQEAAAABAgADBBEFEhMhECIUMQYyFSAjQTBC/9oACAEBAAEFAqiNM8x7wTljtPIVj5Ers8tuOnVF+z2f05A9XazctO4Un9Sv2KD6tMSg5V+Tkgsp9WVnVYYZRET9cnGPofuttHim3jo0saYr/wDW/wBzJT1Z/wBV4mktb/VKBLfScxf1tOXDfueaM25WYlnrfYkfiVjpKlAFlg192uGvJ098sdNr0o+3X3xFgGKuK0fGaY+GI9Yl9exkK1T8Zcm29ikaF/8ATmhu0rqCskGh4MWyV4VugromBjeMEMz1sBDlVoXzj2U2Pke/KvteSb/oYo+3/vDVmyoBZpY1YMtqlqCXpta7fHbicgwFHJr1bOW0ZOHTeRwuK8TjsOqeTHrNuZXU/wCaGAtqY5npfKxiL2X8Ugd6aZXlJZYg7Sz6VZbeSwoZoibafxyzeOFmjG2sZ/TsGl/9bF1Y9+ituiMppWbL22VCHuMsfbJucPVlbmLf3LWHIsenqV9V2KXj4plGJ46seuZzBabE+3WdJi4D3tSq4NXxc06918L1nTGW1qstqLj8ch8ejtFrCL02daGRMoDVuKy0+P8AFTDvWuUKli2atZvcsyvthrtrLRSt9/kORrZs94PHtbHurx1yczsa89HKt2Fidov/ADhPaWaWWJ3ldSgGssVQKP8AmFW3s7kStdzMRbpXSpyLKywspZFrsdEqsLzNvFdastYwLmWq+/ubroEsyGxePrxhfnBQ15YmJzN9a3Z+TbPzcmuY3O8p3blc7Ei/yGi2yu1LJXXDru/68v1qXpMpvuzfVW3bd1qoJ7gpPCohV1lx+ttLMtDGvHuvmPhPklK6sRMvMLkvCYWgbcZh0b44b+T2YSUUnnOW5LFz+HnGcoLhQ/kzGPtKZ4pk/W6xwZ5emTm5RrWs2kJ+ruRxqy/M4rQ8niCDkceVX4uQK+NVLbshMcXZBeO0d5pmNOKzxTGPv54rkm4vK5flV5qzmLMajN4rlP8Aqt4MqrNg8GhnuFta/wC1uUv5BvyMiWcleGsyLLoK/fVZ0jDXxXk21T85yVuSyGhnlPHF5RxgEsrWiAfJ+eOzfwczk8lMrND9TwV/5z4+OEV9deZr0z+ZrHbGwTk5t2WwbqT+x7TyejYZv5/Xxw2QlyNmY9Ayud93Z9uQpO4BsNN/PXfzh5b4d2D/ADSgo38s4xhlfyHjrpncuHgG/jfxs/67+Udq2JLTU18Vfq5Cp+Vn1IakCH9w/H/g9Qnf/wBAvrpNTrAnWN7V018iDZldUf8Avhfx/Mzq83g8vBSanWdD/qB66zrOs6Qp6UbFeKzKcNocJolOzdj6qMsnWdDNGD6gWdUw61tya8hXQl98lQMbMEX9M3v/AH1AkcfSv9YmGDjfhCNhiYI8rZdX1tr1HQzpOkK6gEuPrCoNlmFiimt1HX+SY+rFG4W+D8r+x8agECzI9U8awTErp0nijVTj3ZXsr8leRjmWV+/HPFHqhUKtdRtbja1rurYdXcKvN212V6I+QIR8J8agWBIFmcdLx1Xe6r2moVmFuuAbqyKo+ODDjLDQojIqJVjWcpevHLWaeOrZEw/wLuWRszH4/gK6J/IeO8FoXc8cFTTwxqtwV6moBESCuEal7eXI4tf+2IN19YRP8WRK804cfIRwxVo3QC7kKEleBfnvj1JTUtI7rMgB1x6gXmbSL6raGwMlaAQao1cNc8c8cWuLXFSZ1gqShfeCGqswzur4ruLRerS7hMO2Wfx2kkfx/HlPH0Y0Ii+p3E86iX5agLmsrV5oMNwaZmHVm1K1vG2go6sk8c8UFMWmCuWfSchUxFKdRx6m27EXrXv4TWsWlTK6VVMqrTanWECMpgG4ccGNijf442McTwQV6mXjV5NdvH5OA1XIVtE6OPFBVG61jI5WiuW51trKLss/puDX/sn9ZuVruYi6nvVg3LF1NTqIQojdPjc+u9qJ3BhM/c2omZVhWy7HxEitcScbNaf4m54nDSvjMaqPoFk1ZwY+6/13GMpJc4mwe3qyWruOupYWEu7TKa6yuzNyqKsfOsyhzGX1ReRvdscMmRzXJfjWjk8gW42dQLK7PNRdRZk34+GKpXXOsuW7Vq5cqDTZ78OdSt9gwyvAWuIerhvR1HWOksrj0xseGjc/GlnD1WH/AANcow2x43GVOVwqkn46T8aLQFgr1As1LG6y+1opMb98XZKrPS2zcvbSrae9eykMYRljJDXDVPFDXCJqdZ1nSdJ450nTUMtPq3r2B9Fph2dWou0BkDS36mVdqJYAaX2nabPyRCsKzrCkNc8c6TpOk6TpOsK6lhAl1sbfZvS790tp8e701kryxMn7Om1bEY9PXwYQJqETU1CIUnSFZ0nWdZ1hWM2pkGXN9k3Lmnb3Uft5CkXK7jvLn912HeLbuaM1N/BhMPyffzqH4IjS8HV1u4QwLsAC24xlP9v/AMms9kIEscGBOxwqwIDNzc7T9zQhhhh/1OoY8us6C8LZOxUPYSSYTK36n8gmdtxZchSCz3j3tusuwHab/wBTCYTAe0Im9QtO07yywAZDoVb1LbdAuG+GgEWAxTP/xAAhEQACAgICAgMBAAAAAAAAAAAAAQIREBIgMQMhEzBBUf/aAAgBAwEBPwFL2VUijzv3WIulxvDx5uj5DayDPN47do0Y6Nl9Hl6LIlUdjGLLeHnslFFMQ2N4rlefwssUjv2NiGxzRuzdm4msWd+hliNtTs3pDbYxvhH3iKokiiJ5FRTIoazRqakeFCQ1tKsVUhjXH8LLxQ/Qqia/w8hRRWKJEsMUiyhqxXRqzrFZ7ZPE2RZZsWbjlm8on3iTvCYmUMWa4SWIr1myyyyy+LKPwff0rlNfSuP/xAAlEQACAgEEAgICAwAAAAAAAAAAAQIREBIgITEDQRNRBDAiMmH/2gAIAQIBAT8BUvRDo02eCKXIuiatkYtYTdl4ZDvHi/sL8b/RR0rHjlXBrjQk7FaLHlkO8QX8hRHLmhsi9ioawicqPDxmEZez4vZLxSELZeIjhciKooo0iKocVIknF0JY0nxNi8KPiR8ZpxeyubJw1IqiEGJbnEpYi8pmpfokzUNkWXh8LEHcd8uSiXZGRqFInPVwL6PFJLgssvKPeFL7OC0a29ilqLLLLPQu8QXJNcFFYoSwp32UUvsuKLsjiKoZJC4IzRFqybi+hOKRwavWFhMsk7eGaStywh5XW2itqGViLL/Slisf/8QAOxAAAQMCAwYCBwUIAwAAAAAAAQACEQMhEBIxICIyQVFhBHETIzBAgZGhM0JSYtEFU3KCkrHB8CSi4f/aAAgBAQAGPwLAIrKcA3YPsMn3Rdx6BNpU22FmhQDfmVpK0tttxGawWqlZhxDVFx2Dsyjg2hT+1qXcVl5cz+JTlDfNXumnLlZ3UYRsN8sNFvxjmUaFDAp2NgVAaU+WlXFy6Ea9UWboO6d+9fqfwhbl/wA7lEl7uyhrEC6VKnZHTYFytSjzWU8J5o033cFvYFznKTJVmzHVQKbZWgUwAFlNJs9U2/fyToA3rLK3XquMNHdXqk+SdkZZvM4FHYvsahaYyLSpzzKhnzKlx3UGhxwtKy6ps8En5BOebjp1PRBgM3uuyloInmVxfMrjYO8qMwM3JwIRx/Kso2CJ1WtsJRymeaM810W6m915qQmybrK3jqGw+v6JtJuouT06n/C0+PVCbjmvyBEsaA1v3lB6p5JscO2EBZ6th0UNws7Y5KyzLuitFPREckeqDyssXKqVuVMZWp3cqwNl36KHGBzUNEIvIvylOLzJOMNWZ/EoZjFLLS7tF/mt/wARVd5vK3K9Vvk8prGeLLp5VII+q/537Ne0fvKFv1CawZ35jA3YKOU+fULRQNRhCcSZfqsi7IuLuEJjG26qP7XUXWY69FI0KMlRooOEmzcLabIx9D4nNUo8jzCywGemdJy/dCY+rUNeiLMrtMVG9j1TQ93FYO5O7div4fphL+Jl07VEk63ULtqB1UAS6PNTVLgD+LVTnW9Wp/OVxOPk1Wzk9S1cd+4WX0jD8VmJzBQ1a422xXaAeRHULwNDw7jDnbw6FPHgmFn3XsI3X/BAOcd60n/KN7o9YRKnQtKBk2lNOvZGo0O9GNXGzFDKn9C33uPmVcrmcNcNyq5vxXrN5WN+hxuF226dcszhnJVa1MQx2gUhZXO9YB80EU5ybTY0ueeQR9JHifE/gB9W3zPNA1n5gNG6Nb5DHy9g6nV42fULUKKaucJ9gHtmRcQYITR4jj6jd/35r7R4/llZc7yHc8mifS8GDTpu4qh4n/oPay0wVc7PbZg3Uz7vO1ZAkp3mhUaGsYdC8xKzPYHMGrmGdifaDYG1CJ6KmKhinO95Iei07I2sqrG8EyPLCfZu8sKJj7oWi0TfYBqaE1FMqj+HCB7C2LlV9ZlqOc2Bmy2TQByxFlOzopUpgNlYyiSYWXNObSFB1HtGN+Kos6uCBxpF3A/hdy8kMNFpgXEiB1UMGWi3UoMYLKHNlHIdx3JNph0byD33cvTsG4+zvPHRX9h2FkHDkhi53hC3K/ioP4HfovR1pp/lrf4f+qn68lxD5qS4KGesd0ag/wAR6ul+BCnTYA0clM4QjmvGDmObLXWK9HVG716hS3T2J/EdFKZYpuPZQQHdlmFHI7rTOVfbVx/Mt99Z/m5erpAd+eE4aq11w4cSyu15O6L0NYbn+6KWmQds3smvdInhB6KeQQQxjDRW25w0xyVGyP7Iuoy+moqDIVuuB8sZcQPNQ05z+VTogXucWj7xUN4dm+3quJcVti2Oql7JP4mqafiHtPRzVlp+L+pX2/8A3W89vxJK3qv9IUluY/mUKxU7InZ1WpQDHQQoIKAadfoqfo6sPH1Qa6ocpVNgMtedUGUTbQoF1VzmjkvTzYAy1Xt2R6Qup64+riVvz8FrdX2h7DRGLT0UkunzXG5btVxjSeSzOlzu5VqYWitps6wt184StVrsj3XS+EctmFwoWWnucK+1BwsFve5XwiFfYkYlcviuS19x0nyWWR8VfasYWuH/AL7lqr6KQtPY8lqPcbqxRV8Ndr//xAAnEAEAAgIBBAEEAwEBAAAAAAABABEhMUEQUWFxgZGhscHR4fAg8f/aAAgBAQABPyHaStOxAS8w/ZC5sNSm+8YLlhHHEZwZ3tUa2ZZmKFHOn4zBh44lTgQB4O8Iyy/yRbRQWHmyGImg5jo94r4mRFc0ctviVMSoJcgcEHzEsHOxl08EnEBqLB1uOzoXZnpAd4Odw/gTk8YliDNzHN76TxGLydTcvt6lQCecmE/1YaTvqgWKiVp2mAS6rmhMZcVgjkiTE7i+RKoiahMYzBANPEzykixJWRwaN2d2axOUPiWfqRLKAqhrcpifgD+47PXk54QaAVVnH+P9iOfXwHxEnctMRoXf1hX0OWOp3gbUJrzEVN2YYupxjJj4mphZ6PMFxfM3SnmAHaQcM4WSMqaZjQ0ajuQfxHrbuZVAfWTAGDsRoLDnUT8o7YgJPYpLDBVafd74PrMATRXYjBk5fwlVcYgz5xhMIoe9m6xqJcr56p0u56yxTpKGa6O84w+SAVx8QyeLvEo6VssZNhk7ThmIX2I4MXEKF7L4govE2sn6mAMD+pgE5z2ozFaNxg7Nf5xcLRbJ5mwQGM7jS447Ed2XvRK+APkiVGqhFDM5JVEu8y8WwDhO6XVp6DUMGIq2EKoLCzLZLpZDc7KY+oJNDddpTr6I8Bk2kVZu1b67RAlGVRl7OIJqgxNdUALvP5P2TLI+I2/Lp4PM54UIPf8ACXhNnkwMsrABzHXcYi/ggN2zCPdFFHaYrGa2FkuLiK+JUBBhPZEamCgFYltNeo+tzM4PmBkEMLFM+jZmR50PUEmvE8qdotCId0qDxDzDUHSZvrN1KnBSj5ubl7htOfpn5ljl/e8/7UElA8d539w7IyODuyx6aho4+JY7efLCCrvEdLcSmwZS9fMxje5jTEeI/tmW5gbVp39rMyqUA36MP3Bst0OiMlyNn51l+0Z0SR+vLR+H4m79NHIvZHJ8wC7wirqu+pE4eKgavLxbuDjgwwQ0Jlv7xb3/AEKil2g85x+2BYtVo33ioDjEKTGgZ8kqC6X4RT1VS/ZvJuKMrZ7ztIZaoQJb+SG8FkUEHVWA55isrQg8uYrYsxKJiz4/JD2cUAeSvUXUHFh5NPDZ6g1V8nd34/pcsM1yIP8AYlGSwKHvEKhys+25RyX6V1/EOri3HxLLbSfIMOlyns9HM2tYfwRILKOzRE4OuMi/ERBNWLZtjZbdlO9yJ7h5wigfAzCy4/lWwLzAHHQGdTEclsLiVLiE2rvJvPEz3iQpTFPxcGSgULy9n+SXaUbjfby88+5S8niID2bPiXZ4CWzo4ZrBb8wjXAv/ANfEPfLwB8upURY7tX9xr7jfaHjsLE5iDRZMuag/1RTki/xWkpEHlpnGi8DNERPJMjCjWgxjcbuP/CjS5m1sqWYyPYxH+MTvCs7h3s9/feEFSgIpOrmtVwLZVD3y+DfwY8sRhgngdgwfEr3tN1ai1bzJyID+YjmLdy+mfTtPJHYNwvQQVUb8xwYoitnpWJhGblw2XKppxHdRVytlw7n+pg1GAI/g2QZu/wB/1LEMxUtUO81L1gF2/QfMMoblU53MuhRjpUx3lk9CKvMuXAaLJk0Xz0kXKWHmecoy5ctcGlECI8qhpEIuhj3ijcd9DXV/6rmYHQSZRa8GEqSXfEYdFitoSIrZRXmZ+5M1e/paRpxZOe+ToWx4hjGrs6HW3/k1Ke3QEOsITsYHiU1TySF7QI1xG3Q4qnsGNzeR7m/MF90p0Y0HCPss/wAQSqwPZR5gFridlgGPULYASpUO8ngJS1QbcQGS326ClFauYQGiWGOcEubI+EuS1lAOcsFJtqHW8RWCVew5fk/cJZaINcEXPRXQQLhjcB7RYktexdEquhqNhd5eM8QgAABUp2gdoSmPcJWAckGuLlOdwLzPcjEO3ojSsKG3C4FjsX0bhEhtVol8h8u7YtQRKR4gSmW30ag3Agu0etRolzzixibFj1zPeOnHLOTr9v0fEFlcQc6ubK0a5+6aJr4hg2RYyCTLo/uBIr35lTVpY2DzwuVIFF8wCv5uIB19Bx3fMWLe53eWgBVUyvDwj3LIkDGYMzifEQMtw+WNb7TCWxWQ1W/5Hmau+Es+DDGNEv2+oxNAh4hqFO6za3Do+svgHIN/7yzVkYTGKMCAD8y86vhuPWxgZnjEqCiDuwtfcQIArIkr4lfQyh0LnECsypuxGR8ZYoZtlmO0vGSWMMox4RY4vIsijauX+ExT2A/qW/hMMOyfhf1Ss1UN8qJkvULdw1papexU7g4KikIhHiGS2osX2p+YNn5BBfcbcT06HglJqbTgn/p0w/38QyrejywprniIXxHGGZRt9kZKVuaSWEqKIynuz3J4EDB3MxRL1Z8VMfGY5raFMQZV9rPK8TmqCV+T9k+bRslMk+ULwiYQp3VAXwX+U0iTXNQ2+1bePEqqwGCpeVIANE4mDiM/whIxLpxUO9wnKPM8k3AiGwXM4SDYmAuo8gjtB9TxTPdL2TfuC128L9SWnD37BM2H+u037fnBFzAfLHOjvO/tLS56CIikpxR2IqITe25yBCNExMiPapZZQNv7kWJm+5lglUmZVvBuWI3JIQGYM8Er+4HeTQO/9CMuC7O5diySbZY1br6FxgEAA8eJm/bFE1iFb2Qm1YqUqmrjjK4RF3CGadAN/mVwZeYlCdSyC8S7iXXieghqNdtL6Y0d1MJAKA1tnMtOfiYNGObanxMQEPqpCs0dYAjW2rOYuIjicIQIs5iWW8Tg1mXZZrcP/C5uKgVVSoalTHuNcRvHxnpDxnpAOJfRho4hWBIVbEckO6/iYFAwwA4hD0Da4l7nDvOWqFwtxG+RiD/xK16WSOUwjlN4Swz5EBc/WNdKn/jzIj2pWQKiyuXZZsW4vdiu5L6BEcRPHRfGb9edui9F8Y0ItMQ1GBs+vMZoUPcYHFxflLhEpDGLNtypi4kc/hKFLaCEWOY+83BCIujjLHG5UoQ9pXQG5Zth9US4u7bTEbUvY/HXOQmHKZqhBAUsuC8zeVXdjmHHmU6cQtzGDjHoqmiLxBcAMMSrZVQackanjOWkBq33EtKHszFqqM9JKp2IdjNAltljgq1cC1A9wJPRAi68SrV/MvzNzNsqoHPTgZyc1Nyckb8zB0tJdRZLM5GhXhn7ATED8ys9QD17/9oADAMBAAIAAwAAABCwebhc1/czzYMamLg9AzPSQ/DWw7rrmstmp6TOGY0oGJlOyzP788Z28dPNjHWThXJwlm4XzgEpjwpMbs1UFZy9wByX3bTfTUn1SDz5pM3lrwzEAyBjuty3Y8n8RRX4YvCdQgxIAHT/AF6vOFKUHG/bCHoa8dA4N/dHGs8bEYQ5pqERx+xMAlLB+61SdlReq+FgU6te2z4LoIZR6zBUZuWKINT/ADEgWankiQv/xAAeEQEBAQEBAQEBAQEBAAAAAAABABEhMRBBUSBhcf/aAAgBAwEBPxAjUgUsptzCXsADL+kO+29s3rerddkRPROHyNdXLhmywYvS4EYYG2r+W9ybluflvxVcNNYC47L6iB2Qs+ysPdvw+J8jh20Jh3CMsJm2JO2YdhZP8tye3hLerN6/NzX9sBZN57NmM4cWbeCD2F5P8Ph17Kl+OLFvZ6tZkJe+3VsjD9uwyuMq2H6yn5cOwZatt+kzjjEDLlaMgQ9hu+xHiPNsg5I/OLYP4JQcLxT5l0g7ETwYcHzwFm/PLnserd96sLp+XRN92RPGQwLY5fjbf+Sc2aEsJB7Z4/JPjPmR+D5kckHY+S/SF+ytu+3fyZr/AC6wz4EJwgxsoGdeXi0eyN/7YHZj5o2ZY6yTsRiP8YxfgfBp8BgI59bbbbbb/gSlsm62fN/0Jbbfn//EAB4RAQEBAAMBAQEBAQAAAAAAAAEAERAhMUFRYSCh/9oACAECAQE/EEndkmbAvZlbLwrMNYnadNvV44tLBCe4+WbLjCdQ2RtK+xOIHs57dTHBB/bIawEhhK+wPsZzod2HZDavEezU79lSFYENvxBNDYJ1dLdlxhQhXTA+yqwnqExHDDq+hdbmNqBaFisNxj2OX65K6+Ns9hCfzL+wQQP6Qf2tjAtHZCRHU89sFNp1wltd2bNvO222WcFHLXjuy0b2xmDjed7nrODmHHY18s2Jd6eroP8Agbbd3ZdzZbddrD9yz/X/AJKcfIbB7hyzdexTj7QhG640GxuA5c6tfLH2HPL4MbNGPpDwdzS9tlWs9ONKgdJt2b5wHMZtvxLT8RLjJgN4Fpg2GeAMjYYYhENhjd+39ns39s2QsjgCCL3qEe7+YgOuHtkkEEHBfaCT7x//xAAmEAEAAgICAgIDAAMBAQAAAAABABEhMUFRYXGBkaGxwdHh8BDx/9oACAEBAAE/EFBwSUg/yRJgVFdy4F2KwxmzzHFwqlobI+F0X6hzVUQETQwanqKeBqIWOWswi13qCrZfcUKIefDeCGjZ4fJM4vEQ9zFo9vt0e5d+Go0f0d+4hpigRs68PPPqVQg5EPmVs2WWLELVBU0TJz0gK6GdzVzHVqDn0iQLjZ/USjXiEtubfTb3DqMQcNwVBOA4iLaw875qXnpUsfcxphSpcPLPiUUN4DMcacuGK1XcoVTHbFxWTgh1tlVz4i38AM9v+pssQAc3EIUItAxTouf0DmAdtut11RDGagNkRApoCvwl8N7lH0NsBchV7iNGhKQeWKBOYLRBE3DZACYOrNyGXU9uw0R7GlL7iFKcmEj0XzPMHcXvOB7PcMSwwcKVeqVaYqEKJlromNJvUXkRzi0S8PVqGWOOe2ZazJ4xMMo1re5+4OMNU39PGJj1cAjkXo57caVgsEFUg9OCUCKuG+WO2PA01+sEDSzagxqpnXp4SymQi9IwR08wPB3KOKVAdaKDxEjUW2i6KHqW6LSsLlyjzhSSwVA0K+pqbVD0Psg+uTeUj6gGMMFjZDOALA7VUVfFoPUN5kbKPCxhcH9lAWVZ35hNJACcaVfxAgMCABc6lFqtjoC8u3wZ4ESotkwAK+gwRTHWro66Q5RDC/xz8ssW5AA/U4lcS1OiA0j4gjKKmN2xQ6jDC/cuYW4CtowCyw37muYdtxQWyFiWz1hV2HlGBpdMoww8rIMX/mOEyvOTD88y83xUT1MSgNVMFH+ZgoNtshvUs/C+B0uCarZq8gRHpjYZE0wqymcmRvDy1n5lWtacoEbfr3iEYKOZdqeFpvoLiBLBpwNM0daA4Du4OpZFrB4M5eMS76kFTwsDviOCwfF91AVMLVZLju8g8SuHFwUpZS+lymFjliBlzPOkM/UVDotzzCoH0houIDkEE5mW5Yy2Qn5y4ZXVdNhKeVYU32Pj9QUb1SrO7mgjyY4Kd/kmLkXsP+YA5/bhKY/CYhV7NUXm/EqsBTFyHEcBhUKrNU+cwsNQAXWDVg83itv2sm07vR3oMoaZhgzevbQ32xfMtpz8X0aiuA+wmCg4PzKq6q6WfYxOxbHtvU9FgWpHigQj63QeYxDTglevNBkrC2Nov7ERgasgYrfmaw0Fz5ZVqj7l9DDRpxlGYosDsiECWtRBSrKC+8ZJYMu6tnIf+/cx0TFeSsfDf4hi7lB1x/yzTxjSsHURQUQxlyt/kv2x5XF9fqVaY5JWM0sW1ifKoH6z5ZiGtnNFCnhKTaCMz2UappZbzWDgY7jJx2ltPL/2pVBawvoHlmSQlPgnRxGvx0OB+z0S8Bihrs/MTORupfB4CJGPouD+wQmEWngQKVL0xjgMRerntiL23BjCo2D3a+BRH1K7B9XUO2pkmCy0ddwKaL9ku32kB9oQl0WTXQGbxYMVUytekUjC+AS8oilb41Z57jHCRzpFP7+YVchW8V/qNRuAwFo1+cSt9FgWBZQPi4a1IrD6eS/1KjhQoq7Nr73Lta0EtNB8H0EIY5IytafP4o6ilEKU0M+OVbr9RSbYmqbMb8sEcGwGzoMsAFAxg/zMxsxtp0ef1DEAg2uFa8sCPSgqVcVg/ECm3dO4BgS1EqQOiIxaxlLUY4ZV5gJC5bzWj+zRM2kAXrHYBhX6M5PUIqw7RFQCmge1lSoUmNZ2ExpsOkapzeqrdDnyWnaGYg8Hu0vfh1/iUFZq3c9NfuEw5xqWz8CvxK8SK6bwHD5/kVYnHLwPGVAWkJPBrH/bmPwqqwLCvAfyUWooFNMAGXl+owyZA2GtDjHRcf1NbjTt41NqMJ9kL/TCylAUe81+MSwUCk9h4LqOxpg960MygAUKV5ppllh2TYH+Z4hpXE7dBzo6g3Aje+JUUUY+MO7MYOI6l4KCAJNxo5qFeJjyrJkFDkwU/cov0wSFDTVnJFw3IobsRYgiVbodm5yqtK0nPTgM4ZVYLwNj4epSAuxMKYf2CIuhetVcFIot2pij/u4wUUh2XB+vuAvDo3toL9MqzVdyg+FR1S1Y6LcZjHPisJ8Xp+IKLTtH8H1KaqEJiL3dUr/iGJUOrF/UGtHgRb9RX7Rlw8QX4ageJ0zfxglXr/gw/EplUgBejGobS+Y0ngDHzFcKemPD3HWIrGajVPENpC2oRI9gtRAT0lJAU+cQKVYy0B/2fDSSwQjZQUunTXsOmbPg/wDsNMKTU22wtG8UPsT8yrab8yug9Hxd8RSIFXHypZd5jTAIyUpxFAPgHuMONK0Ii93ax8RrFm9BDJzX/UUx+FERVW9v/ilYBYzyWo0UuOr0yv2TdPi3yOPSRFhTyR0L9RA7D2EGbKq+4mEOyK+XM8k94w1wDiu5nCo4ZWgyuJgGnIeBqS6UREFESWcZGpeVqfYDwRyNtQvJPqf3mWPUlXeCi10FyuEU05VIvvreTqIlWx5iqxQ4YgAsumEV64UY2vNwUobEq0LL3iFJaahT07mEdNisOyF3jtUq7lBRGLKLsS8FuQZciyCY8hqCVlYsingqi3EWMjNt1EZcGTnf0f7/AFKi88RFu0uLyynT3cEpl5wxr5gf+H/iSyA9zJVsGXu3UAalxExGrvNFpETncRa+UFXNoSstQCGxzdBEhAMJun+4hI2NH3AYZZKOwFrygQ533XHsUB5qolSgDgH4/wBxNsEzIzFM7ojuLFf+XBBdspAJqDXJUL+Y1dpcquy4Q3ZGOKiWh1G7v9SpC1dSv0BLghGydxrYVwEPTD6iV4H0zIBXKqkUtqLhQbfw/cOLXS1hke2q+YZ0RHoAYA4Ao+JfNYE2KKr0+Z67cwbA9WnxBMzr9EJATgm2FVoVAHMGXEqZiABlxBC3EBYuuJm0Polrdx3Au7DWswsOBZnzph0LdjswNut+onR9TAHeahmIbIxgfqaiXiou/BLRrKoqOYttS0WUUdcROSBauXb8Q+lmmeerlIUfHMPZQprn+CAKwC+/iVYIfNsRxGocxyiS63RcwpfRh8XCaZbuXK3LwAt8Q0zKIeU/xCGnRoK99ByuoXw40ADUuIBcYHFLsxwk8hHcPpuX4LeUgjTPzBGRJs0+iM/RZEyvAeYrGi74Jfxrq2XnuuOYQStWAs9cweJGtHlXUy3W1mThK8p+Y4lAFK5PuJjuZr1UC5L6lGAi5eqnqOU1KjV7mY/WNbpqVtDfNxaDLI8BR+2E7gHqb/AYSg0uLeJbSoVgoKM5tdPbMIlF0SUUoUSW36jDB7T+JmTRqoOYVDR/3iEF0Qn2Pa4OJilseS5V7mBy1qg/sN4tY5DSHeyNecu8AvD/ALia0yjA+EtPIEY4/T9jzLmjWGCOBXRLxRDylTOUvxPTSQhACvNsWqESqaxNqtwiUscsN91uG6qRuzZ+7mIKTjAlfq5RoGnEasBGWiZ9gIVOTkOBk4ZSjqsD4Ih0AfMHkAsFN6ZX3Mp48P6govsdESRY1gJ+H6uPK5pWeB19nRCqP2ztXle3MfX2XSV+ZY2NFsHcQNTlMhI5hbe+lnxuZDWmt4ghGwusdj3ydMTxnU4TR8nJ7hLR4JO4mFnzA4VmIrjE8j8TP49S1MJ7jhGkUy31H5/fxLFHh57mSxL8K1j4P7LhIow5JcX2GYMaRhM6MBhHXHhFT5HcJMW1Gvph+IvVh1+VbTQDzSXwEs3Xlj5WyyoDx/mZkw8xIUt3f9hCaqza/iErWq6uAClGnUJghRzWYpVIY+H+Rwr6JfbOx5OYysm8gq93J2QFnWNZHHT7f+JVdiEtVccR0gZBEAMK23BDmshgXVzvOeDdCtXDCuKNX/oNwNo2V1eeSX1pBhlFErzAK5TBA75IpHcnn/UCDQbllM2EUeSVG4BaBXBE6B7h2P4R2mqNDbFUwloBLYxgIdwhvPiCaGIPbAg22WO4uGZZvQuh44GD9KjL74+Y1GNIsHsQ05gTkhYj8xk1bWQvzpMGOKUp507fLrgln9F1Rxbb/wAxdUUsYrz59wzVquJhkxGrRa/hAFlvY/UR7vzMgaNXDUbY7Q+pvtTq4kYH3CFOeWJCCsOrgGipqnEGhSve5VmudsHtHGLZeWnIiKl2DtidL4i8HG7NkqZmz7/k+bip7yhadiFnmo5VRAEL+1BUL6A/RLoS8ofqWyocgn5WHh3qvHvQ/EJgwwGoIiILmzcZHXRRLQdQlxgohtqtimXc7G3MqFhVRIaDLVssIWDxKTXfTFWSYMo20ELfDuEFDFkLdq+OI0i/XtDm/UV7yO6mWz4ifWt7zcO4gC/pXmtgBADS3b+CppmYEHxCeWBFUwHtiUEvjCiajvjR0AoBB6WpSfyUxSCMA1zK4HCkVWz7YnsUXL2QjE7ww2OEyIFkoJxGLklRDZm4oCoc1xA5hU3DLFErOIq3Fp4y0tCXESjdmIDYf8QIg8vG/uZNJwWYmWTVAq1Y8Qy1LWNzHeSb/uIpbmKqghhXC0EOKf7lcp+IIGI48xfR5I94AcQvzp7RgkBb1p5gnhDkW+YJpwgqjCUJYalfoOhDUhqUAMr5lZglm4beIKpUxjCX5OOZpBcaxJSFZ6lrCDcrMNvpE7PhD4jF7QywHudw9x81DuWCSs4/seAM2bjrjBWaMsRJsTCMy3UY1VruPycxVb5EfEo+ZV1lyEcymNS9tDN6j4L4nMwwbCAthAeMwcKgoqZhZVCbcxXCZlG2FdMMq41LGwgpmqlTFCCGL0pY5CaSXXoeM7+Y7wGTRiDa0PljsMZm9mpTsfzKmk+dwAxsPMrjA4S5VFQ6INmpd6CImamxEzDSV+pWWwvLiI1ipR8yp6TwyniVUKzLWjJ3HxFv/iKmb5hNBXDkfIjsx3tQjRSAacJFFV9jF1QHmCu+dRqMBmFtEU2PRJZ6y4xcthqzC8KGN2Q20p6IIu3xKMJ8ohlx4gVxFaHMrLUt4JSitkVKMbhIQKmGholXG2XOIImFwralCwtjMGWfE9qWqHxNZJQNBhMam6qz4YJ5XsQ7o0PDiIqhnxG5FUxwiOIikv7gUFtuU7T6xHRm8SHF5HlcV1gcQRYPUobsYGhn1CUvX7lF2ZgcSV7iLpVwyq3UoDkriADir4gGdPczI5eFhfQQWqgeV+IxopeSUpeej2TZ0P3BN0GG7/E+JAlQeVeIarDBonMJB4uWLi44bd1uOfK5BCRZeA1KIRHvCOa7gVrFlGi+ZViqAoJgV2ktVblAL0z41mBDlAAGE4lOGL2TQX3BLFMS3e4Tzn2R5UN81GTzwwgDsqr/AMzAoThMxTJexmIsXWYlFrE3mYKUyrCOIdijc//Z" alt="Портрет — Вадим (fukdat)" width="240" height="240"></div>
-        <span class="badge"><span class="pulse" aria-hidden="true"></span>Открыт к стажировке и Junior-позициям</span>
-        <h1 class="hero-name">fukdat<span class="hero-role">Вадим · <span class="accent">backend &amp; mobile developer</span></span></h1>
-        <p class="bio"><b>Я Вадим</b> — начинающий разработчик с практическим опытом создания и деплоя собственных проектов. Специализируюсь на бэкенд-разработке (<b>Python, FastAPI</b>) и мобильных приложениях (<b>React Native</b>). Имею опыт работы с реляционными базами данных, разработки Telegram-ботов и интеграции нейросетевых API. Умею самостоятельно находить решения и доводить проекты до рабочего состояния.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://t.me/fukdat" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.95 4.27 18.6 19.86c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.97 5.4c.4-.36-.09-.56-.63-.2L5.6 12.42.84 10.93c-1.04-.32-1.06-1.04.22-1.54L20.6 2.77c.86-.32 1.62.2 1.35 1.5z"/></svg>
-            Написать в Telegram
-          </a>
-          <a class="btn btn-ghost" href="https://github.com/fukdat" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-            GitHub
-          </a>
-        </div>
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <canvas class="hero__canvas" id="heroGrid" aria-hidden="true"></canvas>
+  <div class="hero__grid">
+    <div class="hero__head">
+      <h1 class="hero__title">
+        <span class="d-serif line" data-split="chars">$tripple$dallar$</span>
+        <span class="d-sans line" data-split="chars">backend &amp; mobile</span>
+        <span class="d-sans line" data-split="chars">developer</span>
+      </h1>
+      <div class="hero__mid">
+        <p class="hero__sub micro" data-reveal>
+          <span class="dot-live" aria-hidden="true"></span>
+          Открыт к стажировке и&nbsp;Junior-позициям
+        </p>
+        <p class="hero__note micro" data-reveal>
+          Собираю продукт целиком: API и база данных, бот или приложение,
+          контейнер, деплой и поддержка. Пишу код, который уходит в прод, —
+          и отвечаю за него после релиза.
+        </p>
       </div>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section class="block" id="skills">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Стек</span>
-        <h2 class="h-section">Технические навыки</h2>
-        <p class="section-sub">Инструменты, с которыми я работаю на практике — от API и баз данных до деплоя в продакшн.</p>
+    <div class="hero__meta micro">
+      <div class="hero__meta-col" data-reveal>
+        <span class="lbl">Локация</span>
+        <span class="val">Санкт-Петербург, RU</span>
       </div>
-      <div class="skills-grid">
-        <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">⚙️</span>Backend</h3>
-          <div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">REST API</span><span class="chip">aiogram</span></div>
-        </div>
-        <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">📱</span>Frontend / Mobile</h3>
-          <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span><span class="chip">HTML</span><span class="chip">CSS</span></div>
-        </div>
-        <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">🗄️</span>Базы данных</h3>
-          <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">SQL</span></div>
-        </div>
-        <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">🚀</span>DevOps / Инструменты</h3>
-          <div class="chips"><span class="chip">Docker</span><span class="chip">Railway</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">PyCharm</span></div>
-        </div>
-        <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">🧠</span>AI / Нейросети</h3>
-          <div class="chips"><span class="chip">Gemini API</span><span class="chip">Интеграция AI</span></div>
-        </div>
-        <div class="card hoverable skill reveal">
-          <h3><span class="ic" aria-hidden="true">✦</span>Дополнительно</h3>
-          <div class="chips"><span class="chip">Работа с документацией</span><span class="chip">Базовый английский</span></div>
-        </div>
+      <div class="hero__meta-col" data-reveal>
+        <span class="lbl">Локальное время</span>
+        <span class="val" id="clock">--:--:--</span>
+      </div>
+      <div class="hero__meta-col" data-reveal>
+        <span class="lbl">Специализация</span>
+        <span class="val">Python · FastAPI · React&nbsp;Native</span>
+      </div>
+      <div class="hero__meta-col" data-reveal>
+        <span class="lbl">Сообщество</span>
+        <span class="val"><a class="ulink" href="https://vk.ru/codedm" target="_blank" rel="noopener">CodeDM ↗</a></span>
       </div>
     </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section class="block" id="projects">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Работы</span>
-        <h2 class="h-section">Проекты</h2>
-        <p class="section-sub">Реальные приложения, которые я спроектировал, собрал и задеплоил самостоятельно.</p>
+    <div class="hero__foot">
+      <a class="scroll-cue micro" href="#about" data-cursor="скролл">
+        <span>Листай вниз</span>
+        <span class="scroll-cue__line" aria-hidden="true"></span>
+      </a>
+      <span class="micro hero__year">© <span id="yr">2026</span></span>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track" data-marquee data-speed="0.6">
+      <span>Python</span><i>✳</i><span>FastAPI</span><i>✳</i><span>React Native</span><i>✳</i><span>PostgreSQL</span><i>✳</i><span>aiogram</span><i>✳</i><span>Docker</span><i>✳</i><span>TypeScript</span><i>✳</i><span>Gemini API</span><i>✳</i><span>REST API</span><i>✳</i><span>Expo</span><i>✳</i><span>Railway</span><i>✳</i>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="sec sec--about" id="about">
+  <div class="sec__head">
+    <span class="idx micro">01 — Обо мне</span>
+      <i class="rule" aria-hidden="true"></i>
+  </div>
+
+  <div class="about">
+    <div class="about__statement">
+      <p class="statement" data-split="lines">
+        Я Вадим — разработчик, который доводит проекты до продакшна.
+        Собираю бэкенд на <em>Python</em> и <em>FastAPI</em>, мобильные приложения на
+        <em>React&nbsp;Native</em>, Telegram-ботов и интеграции с нейросетями.
+        От первой строки до деплоя — сам.
+      </p>
+    </div>
+
+    <figure class="about__media" data-parallax-wrap>
+      <div class="about__media-mask" data-mask>
+        <img src="assets/img/portrait.jpg" alt="Портрет — Вадим, $tripple$dallar$" width="240" height="240" loading="lazy" decoding="async" data-parallax="0.14">
       </div>
-      <div class="proj-grid">
+      <figcaption class="micro">
+        <span class="lbl">Fig. 01</span>
+        <span class="val">Вадим / $tripple$dallar$</span>
+      </figcaption>
+    </figure>
 
-        <a class="proj-link-wrap reveal" href="https://github.com/fukdat/job_analyzer1" target="_blank" rel="noopener">
-          <article class="card hoverable proj">
-            <div class="proj-top">
-              <h3>Job Market Analyzer</h3>
-              <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-            </div>
-            <div class="tech"><span>FastAPI</span><span>PostgreSQL</span><span>Railway</span><span>Chart.js</span></div>
-            <p>Парсер вакансий HH.ru, FL.ru, Upwork и Kwork. Нейросеть автоматически пишет отклик под каждую вакансию. REST API и визуализация данных.</p>
-            <span class="link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>job_analyzer1</span>
-          </article>
-        </a>
+    <ul class="facts">
+      <li class="fact" data-reveal>
+        <span class="fact__n micro">01</span>
+        <h3 class="fact__t">Продакшн, а не туториалы</h3>
+        <p class="fact__d micro">Боты и сервисы работают у реальных клиентов: записи, оплаты, рассылки.</p>
+      </li>
+      <li class="fact" data-reveal>
+        <span class="fact__n micro">02</span>
+        <h3 class="fact__t">Полный цикл</h3>
+        <p class="fact__d micro">Проектирование API, база данных, интеграции, Docker, деплой и поддержка.</p>
+      </li>
+      <li class="fact" data-reveal>
+        <span class="fact__n micro">03</span>
+        <h3 class="fact__t">AI как инструмент</h3>
+        <p class="fact__d micro">Gemini API в проде: генерация откликов, ответы клиентам, обработка текста.</p>
+      </li>
+      <li class="fact" data-reveal>
+        <span class="fact__n micro">04</span>
+        <h3 class="fact__t">Сообщество</h3>
+        <p class="fact__d micro">Веду CodeDM — место, где разработчики делятся кодом и разбирают задачи.</p>
+      </li>
+    </ul>
+  </div>
 
-        <a class="proj-link-wrap reveal" href="https://github.com/fukdat/nail-salon-bot" target="_blank" rel="noopener">
-          <article class="card hoverable proj">
-            <div class="proj-top">
-              <h3>Nail Salon Bot</h3>
-              <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-            </div>
-            <div class="tech"><span>Python</span><span>aiogram</span><span>SQLite</span><span>Gemini Flash</span><span>Railway</span></div>
-            <p>Telegram-бот для управления записями клиентов салона: расписание, каталог услуг, оплата СБП. Работает в продакшне.</p>
-            <span class="link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>nail-salon-bot</span>
-          </article>
-        </a>
+  <div class="counters">
+    <div class="counter" data-reveal><span class="counter__v" data-count="4">04</span><span class="counter__l micro">Проекта в проде</span></div>
+    <div class="counter" data-reveal><span class="counter__v" data-count="7">07</span><span class="counter__l micro">Основных технологий</span></div>
+    <div class="counter" data-reveal><span class="counter__v" data-count="2">02</span><span class="counter__l micro">Клиентских продукта</span></div>
+    <div class="counter" data-reveal><span class="counter__v" data-count="1">01</span><span class="counter__l micro">Мировой питч-конкурс</span></div>
+  </div>
+</section>
 
-        <a class="proj-link-wrap reveal" href="https://github.com/fukdat/vpn-bot" target="_blank" rel="noopener">
-          <article class="card hoverable proj">
-            <div class="proj-top">
-              <h3>VPN Telegram Bot</h3>
-              <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-            </div>
-            <div class="tech"><span>Python</span><span>Cloudflare Workers</span><span>VLESS</span></div>
-            <p>Бот для раздачи персональных VPN-конфигов. Система одобрения пользователей, VLESS через Cloudflare Workers.</p>
-            <span class="link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>vpn-bot</span>
-          </article>
-        </a>
+<!-- ============================================================
+     PROJECTS
+     ============================================================ -->
+<section class="sec sec--work" id="work">
+  <div class="sec__head">
+    <span class="idx micro">02 — Избранные работы</span>
+    <span class="idx micro idx--r">2024 — 2026</span>
+      <i class="rule" aria-hidden="true"></i>
+  </div>
 
-        <a class="proj-link-wrap reveal" href="https://github.com/fukdat/demonail-salon-bot" target="_blank" rel="noopener">
-          <article class="card hoverable proj">
-            <div class="proj-top">
-              <h3>Demo Nail Salon Bot</h3>
-              <span class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-            </div>
-            <div class="tech"><span>Python</span><span>aiogram</span><span>Gemini Flash</span></div>
-            <p>Демо-версия для презентации клиентам: карусель примеров работ, каталог услуг, оплата СБП.</p>
-            <span class="link"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>demonail-salon-bot</span>
-          </article>
-        </a>
+  <div class="work">
 
+    <article class="work__row" data-peek="01" data-stack="FastAPI / PostgreSQL / Railway">
+        <span class="work__meta micro" aria-hidden="true"><span class="work__num">01 / 04</span><span class="work__role">Fullstack · AI</span><span class="work__yr">2026</span></span>
+      <span class="work__dot" aria-hidden="true"></span>
+      <a class="work__link" href="https://github.com/fukdat/job_analyzer1" target="_blank" rel="noopener" data-cursor="открыть">
+        <span class="work__body">
+          <h3 class="work__client d-serif" data-split="chars">Job Market</h3>
+          <h4 class="work__title d-sans" data-split="chars">Analyzer</h4>
+          <p class="work__desc micro" data-reveal>Парсер вакансий HH.ru, FL.ru, Upwork и Kwork. Нейросеть пишет отклик под каждую вакансию. REST API и визуализация данных.</p>
+          <span class="work__tags micro" data-reveal><i>FastAPI</i><i>PostgreSQL</i><i>Railway</i><i>Chart.js</i></span>
+        </span>
+      </a>
+    </article>
+
+    <article class="work__row" data-peek="02" data-stack="Python / aiogram / SQLite">
+        <span class="work__meta micro" aria-hidden="true"><span class="work__num">02 / 04</span><span class="work__role">Backend · Prod</span><span class="work__yr">2026</span></span>
+      <span class="work__dot" aria-hidden="true"></span>
+      <a class="work__link" href="https://github.com/fukdat/nail-salon-bot" target="_blank" rel="noopener" data-cursor="открыть">
+        <span class="work__body">
+          <h3 class="work__client d-serif" data-split="chars">Nail Salon</h3>
+          <h4 class="work__title d-sans" data-split="chars">Booking Bot</h4>
+          <p class="work__desc micro" data-reveal>Telegram-бот для салона: расписание, каталог услуг, оплата СБП, напоминания. Работает в продакшне с реальными клиентами.</p>
+          <span class="work__tags micro" data-reveal><i>Python</i><i>aiogram</i><i>SQLite</i><i>Gemini Flash</i></span>
+        </span>
+      </a>
+    </article>
+
+    <article class="work__row" data-peek="03" data-stack="Python / Cloudflare / VLESS">
+        <span class="work__meta micro" aria-hidden="true"><span class="work__num">03 / 04</span><span class="work__role">Backend · Infra</span><span class="work__yr">2025</span></span>
+      <span class="work__dot" aria-hidden="true"></span>
+      <a class="work__link" href="https://github.com/fukdat/vpn-bot" target="_blank" rel="noopener" data-cursor="открыть">
+        <span class="work__body">
+          <h3 class="work__client d-serif" data-split="chars">Secure Net</h3>
+          <h4 class="work__title d-sans" data-split="chars">VPN Bot</h4>
+          <p class="work__desc micro" data-reveal>Бот для раздачи персональных конфигов. Система одобрения пользователей, VLESS через Cloudflare Workers.</p>
+          <span class="work__tags micro" data-reveal><i>Python</i><i>Cloudflare Workers</i><i>VLESS</i></span>
+        </span>
+      </a>
+    </article>
+
+    <article class="work__row" data-peek="04" data-stack="Python / aiogram / Gemini">
+        <span class="work__meta micro" aria-hidden="true"><span class="work__num">04 / 04</span><span class="work__role">Product demo</span><span class="work__yr">2025</span></span>
+      <span class="work__dot" aria-hidden="true"></span>
+      <a class="work__link" href="https://github.com/fukdat/demonail-salon-bot" target="_blank" rel="noopener" data-cursor="открыть">
+        <span class="work__body">
+          <h3 class="work__client d-serif" data-split="chars">Demo Suite</h3>
+          <h4 class="work__title d-sans" data-split="chars">Sales Bot</h4>
+          <p class="work__desc micro" data-reveal>Демо-версия продукта для презентации клиентам: карусель работ, каталог услуг, сценарий продажи.</p>
+          <span class="work__tags micro" data-reveal><i>Python</i><i>aiogram</i><i>Gemini Flash</i></span>
+        </span>
+      </a>
+    </article>
+
+  </div>
+
+  <div class="archive">
+    <span class="idx micro">Архив</span>
+    <div class="archive__list">
+      <a class="archive__row micro" href="https://github.com/fukdat" target="_blank" rel="noopener">
+        <span class="d-serif">Telegram AI Society</span><span>Мультиагентная система</span><span class="archive__y">2026</span>
+      </a>
+      <a class="archive__row micro" href="https://github.com/fukdat" target="_blank" rel="noopener">
+        <span class="d-serif">Money App</span><span>Копилка · mini app</span><span class="archive__y">2026</span>
+      </a>
+      <a class="archive__row micro" href="https://fukdat.github.io/khoumkafe/" target="_blank" rel="noopener">
+        <span class="d-serif">HomeCafe</span><span>Лендинг · Петергоф</span><span class="archive__y">2026</span>
+      </a>
+      <a class="archive__row micro" href="https://github.com/fukdat" target="_blank" rel="noopener">
+        <span class="d-serif">Lead Parser</span><span>Сбор лидов · CLI</span><span class="archive__y">2026</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SKILLS
+     ============================================================ -->
+<section class="sec sec--stack" id="stack">
+  <div class="sec__head">
+    <span class="idx micro">03 — Стек</span>
+    <span class="idx micro idx--r">Практика, не список из резюме</span>
+      <i class="rule" aria-hidden="true"></i>
+  </div>
+
+  <div class="stack">
+    <div class="stack__row" data-reveal>
+      <span class="stack__n micro">A—01</span>
+      <h3 class="stack__t d-sans">Backend</h3>
+      <div class="stack__chips micro"><i>Python</i><i>FastAPI</i><i>REST API</i><i>aiogram</i><i>Асинхронность</i></div>
+    </div>
+    <div class="stack__row" data-reveal>
+      <span class="stack__n micro">A—02</span>
+      <h3 class="stack__t d-sans">Mobile &amp; Front</h3>
+      <div class="stack__chips micro"><i>React Native</i><i>Expo</i><i>TypeScript</i><i>HTML</i><i>CSS</i></div>
+    </div>
+    <div class="stack__row" data-reveal>
+      <span class="stack__n micro">A—03</span>
+      <h3 class="stack__t d-sans">Данные</h3>
+      <div class="stack__chips micro"><i>PostgreSQL</i><i>SQLite</i><i>SQL</i><i>Миграции</i></div>
+    </div>
+    <div class="stack__row" data-reveal>
+      <span class="stack__n micro">A—04</span>
+      <h3 class="stack__t d-sans">DevOps</h3>
+      <div class="stack__chips micro"><i>Docker</i><i>Railway</i><i>Vercel</i><i>Git</i><i>GitHub</i></div>
+    </div>
+    <div class="stack__row" data-reveal>
+      <span class="stack__n micro">A—05</span>
+      <h3 class="stack__t d-sans">AI</h3>
+      <div class="stack__chips micro"><i>Gemini API</i><i>Промпт-инжиниринг</i><i>AI-интеграции</i></div>
+    </div>
+    <div class="stack__row" data-reveal>
+      <span class="stack__n micro">A—06</span>
+      <h3 class="stack__t d-sans">Прочее</h3>
+      <div class="stack__chips micro"><i>Техдокументация</i><i>Английский B1</i><i>Питчинг</i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPERIENCE / PATH
+     ============================================================ -->
+<section class="sec sec--path" id="path">
+  <div class="sec__head">
+    <span class="idx micro">04 — Опыт и образование</span>
+      <i class="rule" aria-hidden="true"></i>
+  </div>
+
+  <div class="path">
+    <div class="path__row" data-reveal>
+      <span class="path__y micro">2026 —</span>
+      <div class="path__c">
+        <h3 class="path__t d-sans">Фриланс-разработка</h3>
+        <p class="micro">Телеграм-боты и мини-приложения под ключ для салонов, кафе и локального бизнеса. Сбор требований, разработка, деплой, поддержка.</p>
+      </div>
+      <span class="path__tag micro">Продакшн</span>
+    </div>
+
+    <div class="path__row" data-reveal>
+      <span class="path__y micro">2026</span>
+      <div class="path__c">
+        <h3 class="path__t d-sans">Blue Ocean Student Entrepreneur Competition</h3>
+        <p class="micro">Крупнейший мировой конкурс питчей для студентов. Спонсоры: Harvard Business Review, Morgan Stanley, General Atlantic, INSEAD.</p>
+      </div>
+      <span class="path__tag micro">Награда</span>
+    </div>
+
+    <div class="path__row" data-reveal>
+      <span class="path__y micro">2025 —</span>
+      <div class="path__c">
+        <h3 class="path__t d-sans">РАНХиГС СПб — информационные системы и программирование</h3>
+        <p class="micro">Среднее специальное, обучение продолжается.</p>
+      </div>
+      <span class="path__tag micro">Образование</span>
+    </div>
+
+    <div class="path__row" data-reveal>
+      <span class="path__y micro">2024</span>
+      <div class="path__c">
+        <h3 class="path__t d-sans">Академия ТОП — курс программирования</h3>
+        <p class="micro">Python, C, C#, C++, Java, HTML, CSS. Алгоритмизация, фронтенд- и бэкенд-разработка.</p>
+      </div>
+      <span class="path__tag micro">Курс</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COMMUNITY
+     ============================================================ -->
+<section class="sec sec--community" id="community">
+  <div class="community">
+    <div class="community__head">
+      <span class="idx micro">05 — Сообщество</span>
+      <span class="idx micro idx--r">vk.ru/codedm</span>
+        <i class="rule" aria-hidden="true"></i>
+  </div>
+
+    <h2 class="community__title">
+      <span class="d-serif line" data-split="chars">Code</span><span class="d-sans line" data-split="chars">DM</span>
+    </h2>
+
+    <div class="community__body">
+      <p class="community__lead" data-split="lines">
+        Сообщество для тех, кто пишет код и не хочет делать это в одиночку.
+        Разборы задач, код-ревью, живые проекты, вакансии и стажировки,
+        обмен опытом между новичками и практикующими разработчиками.
+      </p>
+
+      <ul class="community__pts micro">
+        <li data-reveal><span>01</span>Разборы реального кода и архитектуры</li>
+        <li data-reveal><span>02</span>Проекты, которые собираем вместе</li>
+        <li data-reveal><span>03</span>Вакансии, стажировки и фидбэк по резюме</li>
+        <li data-reveal><span>04</span>Никакой воды — только практика</li>
+      </ul>
+
+      <a class="cta" href="https://vk.ru/codedm" target="_blank" rel="noopener" data-magnetic data-cursor="вступить">
+        <span class="cta__txt">Вступить в CodeDM</span>
+        <span class="cta__ico" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <div class="ticker ticker--inv" aria-hidden="true">
+      <div class="ticker__track" data-marquee data-speed="0.9" data-dir="-1">
+        <span>CodeDM</span><i>✳</i><span>Код-ревью</span><i>✳</i><span>Проекты</span><i>✳</i><span>Стажировки</span><i>✳</i><span>Практика</span><i>✳</i><span>Комьюнити</span><i>✳</i><span>CodeDM</span><i>✳</i><span>Разборы</span><i>✳</i>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ACHIEVEMENTS -->
-  <section class="block" id="achievements">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Признание</span>
-        <h2 class="h-section">Достижения <span class="h-serif">и конкурсы</span></h2>
-      </div>
-      <div class="card hoverable reveal">
-        <div class="ach">
-          <span class="medal" aria-hidden="true">🏆</span>
-          <div>
-            <h3>Blue Ocean Student Entrepreneur Competition</h3>
-            <p>Крупнейший мировой конкурс питчей для студентов. Спонсоры: Harvard Business Review, Morgan Stanley, General Atlantic, INSEAD.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="sec sec--contact" id="contact">
+  <div class="sec__head">
+    <span class="idx micro">06 — Контакты</span>
+    <span class="idx micro idx--r">Отвечаю в течение дня</span>
+      <i class="rule" aria-hidden="true"></i>
+  </div>
 
-  <!-- EDUCATION -->
-  <section class="block" id="education">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Путь</span>
-        <h2 class="h-section">Образование <span class="h-serif">и курсы</span></h2>
-      </div>
-      <div class="timeline reveal">
-        <div class="edu">
-          <h3>Среднее специальное (не окончено) — IT-специальность</h3>
-          <p>РАНХиГС СПб, факультет информационных систем и программирования.</p>
-        </div>
-        <div class="edu">
-          <h3>Академия ТОП — курс программирования</h3>
-          <p>Python, C, C#, C++, Java, HTML, CSS. Алгоритмизация, фронтенд- и бэкенд-разработка.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h2 class="contact__title d-sans" data-split="chars">Давай<br>работать</h2>
 
-  <!-- CONTACTS -->
-  <section class="block" id="contacts">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">На связи</span>
-        <h2 class="h-section">Контакты <span class="h-serif">для связи</span></h2>
-        <p class="section-sub">Открыт к стажировке и Junior-позициям — напишите мне напрямую.</p>
-      </div>
-      <div class="contact-grid">
-        <a class="card hoverable contact-card reveal" href="https://t.me/fukdat" target="_blank" rel="noopener">
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.95 4.27 18.6 19.86c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.97 5.4c.4-.36-.09-.56-.63-.2L5.6 12.42.84 10.93c-1.04-.32-1.06-1.04.22-1.54L20.6 2.77c.86-.32 1.62.2 1.35 1.5z"/></svg></span>
-          <span><span class="lbl">Telegram</span><span class="val">@fukdat</span></span>
-        </a>
-        <a class="card hoverable contact-card reveal" href="https://github.com/fukdat" target="_blank" rel="noopener">
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></span>
-          <span><span class="lbl">GitHub</span><span class="val">github.com/fukdat</span></span>
-        </a>
-        <a class="card hoverable contact-card reveal" href="https://fuckdat.site" target="_blank" rel="noopener">
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
-          <span><span class="lbl">Сайт</span><span class="val">fuckdat.site</span></span>
-        </a>
-      </div>
-    </div>
-  </section>
+  <div class="contact__list">
+    <a class="contact__row" href="https://t.me/fukdat" target="_blank" rel="noopener" data-cursor="написать">
+      <span class="contact__k micro">Telegram</span>
+      <span class="contact__v d-serif">@fukdat</span>
+      <span class="contact__a micro">↗</span>
+    </a>
+    <a class="contact__row" href="https://github.com/fukdat" target="_blank" rel="noopener" data-cursor="открыть">
+      <span class="contact__k micro">GitHub</span>
+      <span class="contact__v d-serif">github.com/fukdat</span>
+      <span class="contact__a micro">↗</span>
+    </a>
+    <a class="contact__row" href="https://vk.ru/codedm" target="_blank" rel="noopener" data-cursor="сообщество">
+      <span class="contact__k micro">Community</span>
+      <span class="contact__v d-serif">vk.ru/codedm</span>
+      <span class="contact__a micro">↗</span>
+    </a>
+    <a class="contact__row" href="https://fuckdat.site" target="_blank" rel="noopener" data-cursor="перейти">
+      <span class="contact__k micro">Сайт</span>
+      <span class="contact__v d-serif">fuckdat.site</span>
+      <span class="contact__a micro">↗</span>
+    </a>
+  </div>
+</section>
 
 </main>
 
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer class="foot">
-  <div class="wrap">
-    <p>© <span id="yr"></span> fukdat<span class="dot" aria-hidden="true"></span>Вадим<span class="dot" aria-hidden="true"></span>Backend &amp; Mobile Developer</p>
+  <div class="foot__mark" data-reveal>
+    <span class="d-sans">$$$</span>
+  </div>
+  <div class="foot__cols micro">
+    <div class="foot__col">
+      <span class="lbl">Имя</span>
+      <span class="val">$tripple$dallar$ / Вадим</span>
+    </div>
+    <div class="foot__col">
+      <span class="lbl">Роль</span>
+      <span class="val">Backend &amp; Mobile Developer</span>
+    </div>
+    <div class="foot__col">
+      <span class="lbl">Статус</span>
+      <span class="val"><span class="dot-live" aria-hidden="true"></span>Открыт к предложениям</span>
+    </div>
+    <div class="foot__col">
+      <span class="lbl">Навигация</span>
+      <span class="val"><a class="ulink" href="#top" data-cursor="вверх">Наверх ↑</a></span>
+    </div>
+  </div>
+  <div class="foot__bar micro">
+    <span>© <span class="yr">2026</span> $tripple$dallar$</span>
+    <span>Сделано вручную · без шаблонов</span>
   </div>
 </footer>
 
-<script>
-(function(){
-  "use strict";
-  document.documentElement.classList.add('js');
-
-  // current year
-  var yr = document.getElementById('yr');
-  if (yr) yr.textContent = new Date().getFullYear();
-
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
-
-  if (reduce || !('IntersectionObserver' in window)) {
-    revealEls.forEach(function(el){ el.classList.add('in'); });
-    return;
-  }
-
-  // group elements per section so siblings stagger together
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (!entry.isIntersecting) return;
-      var el = entry.target;
-      var parent = el.parentElement;
-      var siblings = parent ? Array.prototype.filter.call(parent.children, function(c){ return c.classList.contains('reveal'); }) : [el];
-      var idx = Math.max(0, siblings.indexOf(el));
-      el.style.transitionDelay = Math.min(idx * 70, 420) + 'ms';
-      el.classList.add('in');
-      io.unobserve(el);
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-  revealEls.forEach(function(el){ io.observe(el); });
-})();
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script type="module" src="assets/js/main.js"></script>
 </body>
 </html>
