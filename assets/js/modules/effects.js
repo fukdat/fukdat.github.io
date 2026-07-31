@@ -2,7 +2,7 @@
    effects.js — the small details that make the page feel alive:
    glyph scramble, scroll-velocity skew, pointer tilt, letter wave.
    ------------------------------------------------------------ */
-import { $$, reduced, coarse, clamp } from '../lib/utils.js';
+import { $, $$, reduced, coarse, clamp } from '../lib/utils.js';
 
 const GLYPHS = '$#@%&*+=/\\<>[]{}0123456789';
 const CYR = 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЩЭЮЯ';
@@ -106,6 +106,26 @@ export function initTilt() {
       ry(0);
     });
   });
+}
+
+/**
+ * The torn wordmark snaps together: halves fly in from opposite sides
+ * and settle into the offset the paper logo has at rest.
+ */
+export function initTornTitle() {
+  if (reduced) return;
+
+  const el = $('[data-torn]');
+  if (!el) return;
+
+  const top = el.querySelector('.torn__half--top');
+  const bot = el.querySelector('.torn__half--bot');
+  if (!top || !bot) return;
+
+  gsap
+    .timeline({ scrollTrigger: { trigger: el, start: 'top 84%', once: true } })
+    .from(top, { x: -70, y: -20, autoAlpha: 0, duration: 1.15, ease: 'expo.out' })
+    .from(bot, { x: 84, y: 24, autoAlpha: 0, duration: 1.15, ease: 'expo.out' }, 0.09);
 }
 
 /** Hovering a project sends a wave through the letters of its title. */
