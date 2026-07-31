@@ -60,7 +60,7 @@ export function initGrid() {
       const y = p.y + Math.sin(a) * push + drift;
       const size = 3 + near * 7;
 
-      ctx.strokeStyle = `rgba(11,11,11,${0.09 + near * 0.5})`;
+      ctx.strokeStyle = `rgba(236,234,228,${0.07 + near * 0.38})`;
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(x - size, y);
