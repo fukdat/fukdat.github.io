@@ -6,7 +6,7 @@
 <title>$tripple$dallar$ — backend &amp; mobile developer</title>
 <meta name="description" content="$tripple$dallar$ (Вадим) — разработчик. Backend на Python и FastAPI, мобильная разработка на React Native, Telegram-боты, интеграция AI. Открыт к стажировке и Junior-позициям.">
 <meta name="author" content="$tripple$dallar$">
-<meta name="theme-color" content="#e4e2dd">
+<meta name="theme-color" content="#bfbcb4">
 <meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:title" content="$tripple$dallar$ — backend & mobile developer">
@@ -60,12 +60,12 @@
     <span class="nav__mark-txt">$$$</span>
   </a>
   <nav class="nav__links" aria-label="Основная навигация">
-    <a class="pill pill--hide-xs" href="#work" data-magnetic><span>Работы</span></a>
-    <a class="pill pill--hide-xs" href="#about" data-magnetic><span>Обо мне</span></a>
-    <a class="pill pill--hide-sm" href="#stack" data-magnetic><span>Стек</span></a>
-    <a class="pill pill--hide-sm" href="#path" data-magnetic><span>Путь</span></a>
-    <a class="pill" href="#community" data-magnetic><span>Community</span><i class="pill__badge">new</i></a>
-    <a class="pill pill--solid" href="#contact" data-magnetic><span>Связаться</span></a>
+    <a data-scramble-hover class="pill pill--hide-xs" href="#work" data-magnetic><span>Работы</span></a>
+    <a data-scramble-hover class="pill pill--hide-xs" href="#about" data-magnetic><span>Обо мне</span></a>
+    <a data-scramble-hover class="pill pill--hide-sm" href="#stack" data-magnetic><span>Стек</span></a>
+    <a data-scramble-hover class="pill pill--hide-sm" href="#path" data-magnetic><span>Путь</span></a>
+    <a data-scramble-hover class="pill" href="#community" data-magnetic><span>Community</span><i class="pill__badge">new</i></a>
+    <a data-scramble-hover class="pill pill--solid" href="#contact" data-magnetic><span>Связаться</span></a>
   </nav>
 </header>
 
@@ -86,7 +86,7 @@
       <div class="hero__mid">
         <p class="hero__sub micro" data-reveal>
           <span class="dot-live" aria-hidden="true"></span>
-          Открыт к стажировке и&nbsp;Junior-позициям
+          Открыт к стажировке и&nbsp;Junior-позициям<i class="caret" aria-hidden="true"></i>
         </p>
         <p class="hero__note micro" data-reveal>
           Собираю продукт целиком: API и база данных, бот или приложение,
@@ -110,8 +110,8 @@
         <span class="val">Python · FastAPI · React&nbsp;Native</span>
       </div>
       <div class="hero__meta-col" data-reveal>
-        <span class="lbl">Сообщество</span>
-        <span class="val"><a class="ulink" href="https://vk.ru/codedm" target="_blank" rel="noopener">CodeDM ↗</a></span>
+        <span class="lbl">Каталог услуг</span>
+        <span class="val"><a class="ulink" href="https://vk.ru/codedm" target="_blank" rel="noopener" data-scramble>CodeDM ↗</a></span>
       </div>
     </div>
 
@@ -136,7 +136,7 @@
      ============================================================ -->
 <section class="sec sec--about" id="about">
   <div class="sec__head">
-    <span class="idx micro">01 — Обо мне</span>
+    <span class="idx micro" data-scramble>01 — Обо мне</span>
       <i class="rule" aria-hidden="true"></i>
   </div>
 
@@ -150,13 +150,22 @@
       </p>
     </div>
 
-    <figure class="about__media" data-parallax-wrap>
+    <figure class="about__media" data-parallax-wrap data-tilt>
       <div class="about__media-mask" data-mask>
-        <img src="assets/img/portrait.jpg" alt="Портрет — Вадим, $tripple$dallar$" width="240" height="240" loading="lazy" decoding="async" data-parallax="0.14">
+        <!-- заглушка: сюда позже встанет фотография -->
+        <div class="ph" data-parallax="0.14" role="img" aria-label="Фотография будет добавлена позже">
+          <svg class="ph__ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="8" y="14" width="48" height="36" rx="3"/>
+            <circle cx="22" cy="27" r="4"/>
+            <path d="M14 44l12-11 9 8 7-6 8 9"/>
+            <path d="M6 58 58 6"/>
+          </svg>
+          <span class="ph__txt micro">No image</span>
+        </div>
       </div>
       <figcaption class="micro">
         <span class="lbl">Fig. 01</span>
-        <span class="val">Вадим / $tripple$dallar$</span>
+        <span class="val" data-scramble>Вадим / $tripple$dallar$</span>
       </figcaption>
     </figure>
 
@@ -178,8 +187,8 @@
       </li>
       <li class="fact" data-reveal>
         <span class="fact__n micro">04</span>
-        <h3 class="fact__t">Сообщество</h3>
-        <p class="fact__d micro">Веду CodeDM — место, где разработчики делятся кодом и разбирают задачи.</p>
+        <h3 class="fact__t">Каталог заказов</h3>
+        <p class="fact__d micro">Веду CodeDM — сообщество-витрину: там каталог услуг, оттуда приходят заказы.</p>
       </li>
     </ul>
   </div>
@@ -197,12 +206,12 @@
      ============================================================ -->
 <section class="sec sec--work" id="work">
   <div class="sec__head">
-    <span class="idx micro">02 — Избранные работы</span>
-    <span class="idx micro idx--r">2024 — 2026</span>
+    <span class="idx micro" data-scramble>02 — Избранные работы</span>
+    <span class="idx micro idx--r" data-scramble>2024 — 2026</span>
       <i class="rule" aria-hidden="true"></i>
   </div>
 
-  <div class="work">
+  <div class="work" data-skew>
 
     <article class="work__row" data-peek="01" data-stack="FastAPI / PostgreSQL / Railway">
         <span class="work__meta micro" aria-hidden="true"><span class="work__num">01 / 04</span><span class="work__role">Fullstack · AI</span><span class="work__yr">2026</span></span>
@@ -259,18 +268,18 @@
   </div>
 
   <div class="archive">
-    <span class="idx micro">Архив</span>
+    <span class="idx micro" data-scramble>Архив</span>
     <div class="archive__list">
-      <a class="archive__row micro" href="https://github.com/fukdat" target="_blank" rel="noopener">
+      <a class="archive__row micro" data-scramble-hover href="https://github.com/fukdat" target="_blank" rel="noopener">
         <span class="d-serif">Telegram AI Society</span><span>Мультиагентная система</span><span class="archive__y">2026</span>
       </a>
-      <a class="archive__row micro" href="https://github.com/fukdat" target="_blank" rel="noopener">
+      <a class="archive__row micro" data-scramble-hover href="https://github.com/fukdat" target="_blank" rel="noopener">
         <span class="d-serif">Money App</span><span>Копилка · mini app</span><span class="archive__y">2026</span>
       </a>
-      <a class="archive__row micro" href="https://fukdat.github.io/khoumkafe/" target="_blank" rel="noopener">
+      <a class="archive__row micro" data-scramble-hover href="https://fukdat.github.io/khoumkafe/" target="_blank" rel="noopener">
         <span class="d-serif">HomeCafe</span><span>Лендинг · Петергоф</span><span class="archive__y">2026</span>
       </a>
-      <a class="archive__row micro" href="https://github.com/fukdat" target="_blank" rel="noopener">
+      <a class="archive__row micro" data-scramble-hover href="https://github.com/fukdat" target="_blank" rel="noopener">
         <span class="d-serif">Lead Parser</span><span>Сбор лидов · CLI</span><span class="archive__y">2026</span>
       </a>
     </div>
@@ -282,12 +291,12 @@
      ============================================================ -->
 <section class="sec sec--stack" id="stack">
   <div class="sec__head">
-    <span class="idx micro">03 — Стек</span>
-    <span class="idx micro idx--r">Практика, не список из резюме</span>
+    <span class="idx micro" data-scramble>03 — Стек</span>
+    <span class="idx micro idx--r" data-scramble>Практика, не список из резюме</span>
       <i class="rule" aria-hidden="true"></i>
   </div>
 
-  <div class="stack">
+  <div class="stack" data-skew>
     <div class="stack__row" data-reveal>
       <span class="stack__n micro">A—01</span>
       <h3 class="stack__t d-sans">Backend</h3>
@@ -326,7 +335,7 @@
      ============================================================ -->
 <section class="sec sec--path" id="path">
   <div class="sec__head">
-    <span class="idx micro">04 — Опыт и образование</span>
+    <span class="idx micro" data-scramble>04 — Опыт и образование</span>
       <i class="rule" aria-hidden="true"></i>
   </div>
 
@@ -375,10 +384,10 @@
 <section class="sec sec--community" id="community">
   <div class="community">
     <div class="community__head">
-      <span class="idx micro">05 — Сообщество</span>
-      <span class="idx micro idx--r">vk.ru/codedm</span>
-        <i class="rule" aria-hidden="true"></i>
-  </div>
+      <span class="idx micro" data-scramble>05 — Каталог услуг</span>
+      <span class="idx micro idx--r" data-scramble>vk.ru/codedm</span>
+      <i class="rule" aria-hidden="true"></i>
+    </div>
 
     <h2 class="community__title">
       <span class="d-serif line" data-split="chars">Code</span><span class="d-sans line" data-split="chars">DM</span>
@@ -386,27 +395,33 @@
 
     <div class="community__body">
       <p class="community__lead" data-split="lines">
-        Сообщество для тех, кто пишет код и не хочет делать это в одиночку.
-        Разборы задач, код-ревью, живые проекты, вакансии и стажировки,
-        обмен опытом между новичками и практикующими разработчиками.
+        Моё сообщество ВКонтакте — это магазин услуг. Каталог: выбираешь готовое
+        решение, пишешь мне, я беру заказ в работу и сдаю результат. Как на Kwork,
+        только напрямую и без комиссии площадки.
       </p>
 
       <ul class="community__pts micro">
-        <li data-reveal><span>01</span>Разборы реального кода и архитектуры</li>
-        <li data-reveal><span>02</span>Проекты, которые собираем вместе</li>
-        <li data-reveal><span>03</span>Вакансии, стажировки и фидбэк по резюме</li>
-        <li data-reveal><span>04</span>Никакой воды — только практика</li>
+        <li data-reveal><span>01</span>Telegram-боты: запись, оплата, рассылки, админка</li>
+        <li data-reveal><span>02</span>Мини-приложения и лендинги под ключ</li>
+        <li data-reveal><span>03</span>Парсеры, автоматизация, интеграции с AI</li>
+        <li data-reveal><span>04</span>Доработка и поддержка того, что уже работает</li>
       </ul>
 
-      <a class="cta" href="https://vk.ru/codedm" target="_blank" rel="noopener" data-magnetic data-cursor="вступить">
-        <span class="cta__txt">Вступить в CodeDM</span>
+      <div class="community__flow micro">
+        <span data-reveal><i>01</i>Выбираешь услугу в каталоге</span>
+        <span data-reveal><i>02</i>Обсуждаем задачу и сроки</span>
+        <span data-reveal><i>03</i>Забираешь готовый результат</span>
+      </div>
+
+      <a class="cta" href="https://vk.ru/codedm" target="_blank" rel="noopener" data-magnetic data-cursor="каталог">
+        <span class="cta__txt">Открыть каталог услуг</span>
         <span class="cta__ico" aria-hidden="true">↗</span>
       </a>
     </div>
 
     <div class="ticker ticker--inv" aria-hidden="true">
       <div class="ticker__track" data-marquee data-speed="0.9" data-dir="-1">
-        <span>CodeDM</span><i>✳</i><span>Код-ревью</span><i>✳</i><span>Проекты</span><i>✳</i><span>Стажировки</span><i>✳</i><span>Практика</span><i>✳</i><span>Комьюнити</span><i>✳</i><span>CodeDM</span><i>✳</i><span>Разборы</span><i>✳</i>
+        <span>Заказать бота</span><i>✳</i><span>Мини-приложение</span><i>✳</i><span>Лендинг</span><i>✳</i><span>Парсер</span><i>✳</i><span>Автоматизация</span><i>✳</i><span>AI-интеграция</span><i>✳</i><span>Поддержка</span><i>✳</i><span>CodeDM</span><i>✳</i>
       </div>
     </div>
   </div>
@@ -417,8 +432,8 @@
      ============================================================ -->
 <section class="sec sec--contact" id="contact">
   <div class="sec__head">
-    <span class="idx micro">06 — Контакты</span>
-    <span class="idx micro idx--r">Отвечаю в течение дня</span>
+    <span class="idx micro" data-scramble>06 — Контакты</span>
+    <span class="idx micro idx--r" data-scramble>Отвечаю в течение дня</span>
       <i class="rule" aria-hidden="true"></i>
   </div>
 
@@ -426,22 +441,22 @@
 
   <div class="contact__list">
     <a class="contact__row" href="https://t.me/fukdat" target="_blank" rel="noopener" data-cursor="написать">
-      <span class="contact__k micro">Telegram</span>
+      <span class="contact__k micro" data-scramble-hover>Telegram</span>
       <span class="contact__v d-serif">@fukdat</span>
       <span class="contact__a micro">↗</span>
     </a>
     <a class="contact__row" href="https://github.com/fukdat" target="_blank" rel="noopener" data-cursor="открыть">
-      <span class="contact__k micro">GitHub</span>
+      <span class="contact__k micro" data-scramble-hover>GitHub</span>
       <span class="contact__v d-serif">github.com/fukdat</span>
       <span class="contact__a micro">↗</span>
     </a>
     <a class="contact__row" href="https://vk.ru/codedm" target="_blank" rel="noopener" data-cursor="сообщество">
-      <span class="contact__k micro">Community</span>
+      <span class="contact__k micro" data-scramble-hover>Community</span>
       <span class="contact__v d-serif">vk.ru/codedm</span>
       <span class="contact__a micro">↗</span>
     </a>
     <a class="contact__row" href="https://fuckdat.site" target="_blank" rel="noopener" data-cursor="перейти">
-      <span class="contact__k micro">Сайт</span>
+      <span class="contact__k micro" data-scramble-hover>Сайт</span>
       <span class="contact__v d-serif">fuckdat.site</span>
       <span class="contact__a micro">↗</span>
     </a>

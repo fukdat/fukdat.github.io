@@ -12,6 +12,7 @@ import { playHero } from './modules/hero.js';
 import { initMarquee } from './modules/marquee.js';
 import { initNav, initClock, initYear, initWorkHover } from './modules/chrome.js';
 import { initGrid, initProgress } from './modules/grid.js';
+import { initScramble, initSkew, initTilt, initLetterWave } from './modules/effects.js';
 
 document.documentElement.classList.add('js');
 
@@ -61,6 +62,10 @@ async function start() {
   initReveal(splitMap);
   initGrid();
   initProgress(lenis);
+  initScramble();
+  initSkew(lenis);
+  initTilt();
+  initLetterWave();
 
   await runPreloader();
   playHero(splitMap);
