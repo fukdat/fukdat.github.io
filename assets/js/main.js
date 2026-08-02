@@ -11,7 +11,7 @@ import { prepareText, initReveal } from './modules/reveal.js';
 import { playHero } from './modules/hero.js';
 import { initMarquee } from './modules/marquee.js';
 import { initNav, initClock, initYear, initWorkHover } from './modules/chrome.js';
-import { initGrid, initProgress } from './modules/grid.js';
+import { initBackdrop, initProgress } from './modules/backdrop.js';
 import { initScramble, initSkew, initTilt, initLetterWave, initTornTitle } from './modules/effects.js';
 
 document.documentElement.classList.add('js');
@@ -60,7 +60,7 @@ async function start() {
   initWorkHover();
   initMarquee(lenis);
   initReveal(splitMap);
-  initGrid();
+  initBackdrop();
   initProgress(lenis);
   initScramble();
   initSkew(lenis);

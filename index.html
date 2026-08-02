@@ -62,10 +62,9 @@
     <span class="nav__mark-txt">$$$</span>
   </a>
   <nav class="nav__links" aria-label="Основная навигация">
+    <a data-scramble-hover class="pill" href="#services" data-magnetic><span>Услуги</span></a>
     <a data-scramble-hover class="pill pill--hide-xs" href="#work" data-magnetic><span>Работы</span></a>
-    <a data-scramble-hover class="pill pill--hide-xs" href="#about" data-magnetic><span>Обо мне</span></a>
-    <a data-scramble-hover class="pill pill--hide-sm" href="#stack" data-magnetic><span>Стек</span></a>
-    <a data-scramble-hover class="pill pill--hide-sm" href="#path" data-magnetic><span>Путь</span></a>
+    <a data-scramble-hover class="pill pill--hide-sm" href="#about" data-magnetic><span>Обо мне</span></a>
     <a data-scramble-hover class="pill" href="#community" data-magnetic><span>Community</span><i class="pill__badge">new</i></a>
     <a data-scramble-hover class="pill pill--solid" href="#contact" data-magnetic><span>Связаться</span></a>
   </nav>
@@ -95,6 +94,14 @@
           контейнер, деплой и поддержка. Пишу код, который уходит в прод, —
           и отвечаю за него после релиза.
         </p>
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="#contact" data-magnetic data-cursor="написать">
+            <span>Обсудить задачу</span><i aria-hidden="true">→</i>
+          </a>
+          <a class="btn" href="#services" data-magnetic data-cursor="услуги">
+            <span>Что я делаю</span><i aria-hidden="true">↓</i>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -134,81 +141,130 @@
 </section>
 
 <!-- ============================================================
-     ABOUT
+     SERVICES
      ============================================================ -->
-<section class="sec sec--about" id="about">
+<section class="sec sec--svc" id="services">
   <div class="sec__head">
-    <span class="idx micro" data-scramble>01 — Обо мне</span>
-      <i class="rule" aria-hidden="true"></i>
+    <span class="idx micro" data-scramble>01 — Услуги</span>
+    <span class="idx micro idx--r" data-scramble>Отвечаю в день обращения</span>
+    <i class="rule" aria-hidden="true"></i>
   </div>
 
-  <div class="about">
-    <div class="about__statement">
-      <p class="statement" data-split="lines">
-        Я Вадим — разработчик, который доводит проекты до продакшна.
-        Собираю бэкенд на <em>Python</em> и <em>FastAPI</em>, мобильные приложения на
-        <em>React&nbsp;Native</em>, Telegram-ботов и интеграции с нейросетями.
-        От первой строки до деплоя — сам.
-      </p>
-    </div>
+  <h2 class="sec__lead" data-split="lines">
+    Беру задачу целиком: от постановки до продукта, который работает
+    на сервере и приносит заявки. Без «доделаю потом».
+  </h2>
 
-    <figure class="about__media" data-parallax-wrap data-tilt>
-      <div class="about__media-mask" data-mask>
-        <!-- заглушка: сюда позже встанет фотография -->
-        <div class="ph" data-parallax="0.14" role="img" aria-label="Фотография будет добавлена позже">
-          <svg class="ph__ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="8" y="14" width="48" height="36" rx="3"/>
-            <circle cx="22" cy="27" r="4"/>
-            <path d="M14 44l12-11 9 8 7-6 8 9"/>
-            <path d="M6 58 58 6"/>
-          </svg>
-          <span class="ph__txt micro">No image</span>
-        </div>
+  <ul class="svc">
+    <li class="svc__card" data-reveal>
+      <span class="svc__n micro">01</span>
+      <h3 class="svc__t d-sans">Telegram-бот под ключ</h3>
+      <p class="svc__d">Запись клиентов, оплата, каталог, рассылки, админка. Разворачиваю на сервере и передаю рабочим — с доступами и инструкцией.</p>
+      <ul class="svc__inc micro">
+        <li>aiogram · PostgreSQL · Docker</li>
+        <li>Админка и выгрузка заявок</li>
+        <li>Платежи и напоминания</li>
+      </ul>
+      <div class="svc__foot micro">
+        <!-- цены проставь свои: «от 15 000 ₽» и т.п. -->
+        <span class="svc__meta">Срок 5–14 дней · цена по задаче</span>
+        <a class="svc__go" href="#contact" data-cursor="написать">Обсудить <i aria-hidden="true">→</i></a>
       </div>
-      <figcaption class="micro">
-        <span class="lbl">Fig. 01</span>
-        <span class="val" data-scramble>Вадим / $tripple$dallar$</span>
-      </figcaption>
-    </figure>
+    </li>
 
-    <ul class="facts">
-      <li class="fact" data-reveal>
-        <span class="fact__n micro">01</span>
-        <h3 class="fact__t">Продакшн, а не туториалы</h3>
-        <p class="fact__d micro">Боты и сервисы работают у реальных клиентов: записи, оплаты, рассылки.</p>
-      </li>
-      <li class="fact" data-reveal>
-        <span class="fact__n micro">02</span>
-        <h3 class="fact__t">Полный цикл</h3>
-        <p class="fact__d micro">Проектирование API, база данных, интеграции, Docker, деплой и поддержка.</p>
-      </li>
-      <li class="fact" data-reveal>
-        <span class="fact__n micro">03</span>
-        <h3 class="fact__t">AI как инструмент</h3>
-        <p class="fact__d micro">Gemini API в проде: генерация откликов, ответы клиентам, обработка текста.</p>
-      </li>
-      <li class="fact" data-reveal>
-        <span class="fact__n micro">04</span>
-        <h3 class="fact__t">Каталог заказов</h3>
-        <p class="fact__d micro">Веду CodeDM — сообщество-витрину: там каталог услуг, оттуда приходят заказы.</p>
-      </li>
-    </ul>
-  </div>
+    <li class="svc__card" data-reveal>
+      <span class="svc__n micro">02</span>
+      <h3 class="svc__t d-sans">Мини-приложение и&nbsp;лендинг</h3>
+      <p class="svc__d">Telegram Mini App или страница под запуск: витрина, форма, запись, оплата. Адаптив, скорость, аналитика.</p>
+      <ul class="svc__inc micro">
+        <li>React Native · TypeScript</li>
+        <li>Витрина, корзина, заявки</li>
+        <li>Домен, хостинг, метрика</li>
+      </ul>
+      <div class="svc__foot micro">
+        <span class="svc__meta">Срок 7–21 день · цена по задаче</span>
+        <a class="svc__go" href="#contact" data-cursor="написать">Обсудить <i aria-hidden="true">→</i></a>
+      </div>
+    </li>
 
-  <div class="counters">
-    <div class="counter" data-reveal><span class="counter__v" data-count="4">04</span><span class="counter__l micro">Проекта в проде</span></div>
-    <div class="counter" data-reveal><span class="counter__v" data-count="7">07</span><span class="counter__l micro">Основных технологий</span></div>
-    <div class="counter" data-reveal><span class="counter__v" data-count="2">02</span><span class="counter__l micro">Клиентских продукта</span></div>
-    <div class="counter" data-reveal><span class="counter__v" data-count="1">01</span><span class="counter__l micro">Мировой питч-конкурс</span></div>
+    <li class="svc__card" data-reveal>
+      <span class="svc__n micro">03</span>
+      <h3 class="svc__t d-sans">Парсер и автоматизация</h3>
+      <p class="svc__d">Сбор данных с сайтов и маркетплейсов, обработка, выгрузка в таблицу или базу. Рутина, которая делается сама по расписанию.</p>
+      <ul class="svc__inc micro">
+        <li>Python · FastAPI · REST</li>
+        <li>Обход защиты и лимитов</li>
+        <li>Отчёты и уведомления</li>
+      </ul>
+      <div class="svc__foot micro">
+        <span class="svc__meta">Срок 3–10 дней · цена по задаче</span>
+        <a class="svc__go" href="#contact" data-cursor="написать">Обсудить <i aria-hidden="true">→</i></a>
+      </div>
+    </li>
+
+    <li class="svc__card" data-reveal>
+      <span class="svc__n micro">04</span>
+      <h3 class="svc__t d-sans">AI внутри продукта</h3>
+      <p class="svc__d">Нейросеть как часть сервиса: генерация откликов и текстов, ответы клиентам, разбор входящих сообщений. Не демо — рабочий контур.</p>
+      <ul class="svc__inc micro">
+        <li>Gemini API · промпт-логика</li>
+        <li>Очереди и лимиты</li>
+        <li>Контроль качества ответов</li>
+      </ul>
+      <div class="svc__foot micro">
+        <span class="svc__meta">Срок 5–14 дней · цена по задаче</span>
+        <a class="svc__go" href="#contact" data-cursor="написать">Обсудить <i aria-hidden="true">→</i></a>
+      </div>
+    </li>
+  </ul>
+
+  <div class="svc__cta">
+    <p class="svc__cta-t d-sans" data-reveal>Не нашёл свою задачу?</p>
+    <a class="btn btn--solid" href="#contact" data-magnetic data-cursor="написать">
+      <span>Описать задачу</span><i aria-hidden="true">→</i>
+    </a>
   </div>
 </section>
 
+<!-- ============================================================
+     PROCESS
+     ============================================================ -->
+<section class="sec sec--flow" id="process">
+  <div class="sec__head">
+    <span class="idx micro" data-scramble>02 — Как идёт работа</span>
+    <span class="idx micro idx--r" data-scramble>Без сюрпризов по срокам</span>
+    <i class="rule" aria-hidden="true"></i>
+  </div>
+
+  <ol class="flow">
+    <li class="flow__step" data-reveal>
+      <span class="flow__n d-sans">01</span>
+      <h3 class="flow__t">Разбираем задачу</h3>
+      <p class="flow__d micro">Списываемся в Telegram: что нужно, кому и зачем. Я задаю вопросы и сам предлагаю, что выкинуть из первой версии.</p>
+    </li>
+    <li class="flow__step" data-reveal>
+      <span class="flow__n d-sans">02</span>
+      <h3 class="flow__t">Фиксируем объём и срок</h3>
+      <p class="flow__d micro">Пишу, что войдёт в работу, сколько это займёт и сколько стоит. Дальше цена не растёт по ходу.</p>
+    </li>
+    <li class="flow__step" data-reveal>
+      <span class="flow__n d-sans">03</span>
+      <h3 class="flow__t">Собираю и показываю</h3>
+      <p class="flow__d micro">Показываю рабочие куски по ходу, а не в конце. Правки вносим сразу, пока это дёшево.</p>
+    </li>
+    <li class="flow__step" data-reveal>
+      <span class="flow__n d-sans">04</span>
+      <h3 class="flow__t">Сдаю и остаюсь на связи</h3>
+      <p class="flow__d micro">Разворачиваю на сервере, отдаю доступы, показываю как пользоваться. После сдачи отвечаю за баги.</p>
+    </li>
+  </ol>
+</section>
 <!-- ============================================================
      PROJECTS
      ============================================================ -->
 <section class="sec sec--work" id="work">
   <div class="sec__head">
-    <span class="idx micro" data-scramble>02 — Избранные работы</span>
+    <span class="idx micro" data-scramble>03 — Избранные работы</span>
     <span class="idx micro idx--r" data-scramble>2024 — 2026</span>
       <i class="rule" aria-hidden="true"></i>
   </div>
@@ -289,11 +345,81 @@
 </section>
 
 <!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="sec sec--about" id="about">
+  <div class="sec__head">
+    <span class="idx micro" data-scramble>04 — Обо мне</span>
+      <i class="rule" aria-hidden="true"></i>
+  </div>
+
+  <div class="about">
+    <div class="about__statement">
+      <p class="statement" data-split="lines">
+        Я Вадим — разработчик, который доводит проекты до продакшна.
+        Собираю бэкенд на <em>Python</em> и <em>FastAPI</em>, мобильные приложения на
+        <em>React&nbsp;Native</em>, Telegram-ботов и интеграции с нейросетями.
+        От первой строки до деплоя — сам.
+      </p>
+    </div>
+
+    <figure class="about__media" data-parallax-wrap data-tilt>
+      <div class="about__media-mask" data-mask>
+        <!-- заглушка: сюда позже встанет фотография -->
+        <div class="ph" data-parallax="0.14" role="img" aria-label="Фотография будет добавлена позже">
+          <svg class="ph__ico" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="8" y="14" width="48" height="36" rx="3"/>
+            <circle cx="22" cy="27" r="4"/>
+            <path d="M14 44l12-11 9 8 7-6 8 9"/>
+            <path d="M6 58 58 6"/>
+          </svg>
+          <span class="ph__txt micro">No image</span>
+        </div>
+      </div>
+      <figcaption class="micro">
+        <span class="lbl">Fig. 01</span>
+        <span class="val" data-scramble>Вадим / $tripple$dallar$</span>
+      </figcaption>
+    </figure>
+
+    <ul class="facts">
+      <li class="fact" data-reveal>
+        <span class="fact__n micro">01</span>
+        <h3 class="fact__t">Продакшн, а не туториалы</h3>
+        <p class="fact__d micro">Боты и сервисы работают у реальных клиентов: записи, оплаты, рассылки.</p>
+      </li>
+      <li class="fact" data-reveal>
+        <span class="fact__n micro">02</span>
+        <h3 class="fact__t">Полный цикл</h3>
+        <p class="fact__d micro">Проектирование API, база данных, интеграции, Docker, деплой и поддержка.</p>
+      </li>
+      <li class="fact" data-reveal>
+        <span class="fact__n micro">03</span>
+        <h3 class="fact__t">AI как инструмент</h3>
+        <p class="fact__d micro">Gemini API в проде: генерация откликов, ответы клиентам, обработка текста.</p>
+      </li>
+      <li class="fact" data-reveal>
+        <span class="fact__n micro">04</span>
+        <h3 class="fact__t">Каталог заказов</h3>
+        <p class="fact__d micro">Веду CodeDM — сообщество-витрину: там каталог услуг, оттуда приходят заказы.</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="counters">
+    <div class="counter" data-reveal><span class="counter__v" data-count="4">04</span><span class="counter__l micro">Проекта в проде</span></div>
+    <div class="counter" data-reveal><span class="counter__v" data-count="7">07</span><span class="counter__l micro">Основных технологий</span></div>
+    <div class="counter" data-reveal><span class="counter__v" data-count="2">02</span><span class="counter__l micro">Клиентских продукта</span></div>
+    <div class="counter" data-reveal><span class="counter__v" data-count="1">01</span><span class="counter__l micro">Мировой питч-конкурс</span></div>
+  </div>
+</section>
+
+<!-- ============================================================
      SKILLS
      ============================================================ -->
 <section class="sec sec--stack" id="stack">
   <div class="sec__head">
-    <span class="idx micro" data-scramble>03 — Стек</span>
+    <span class="idx micro" data-scramble>05 — Стек</span>
     <span class="idx micro idx--r" data-scramble>Практика, не список из резюме</span>
       <i class="rule" aria-hidden="true"></i>
   </div>
@@ -337,7 +463,7 @@
      ============================================================ -->
 <section class="sec sec--path" id="path">
   <div class="sec__head">
-    <span class="idx micro" data-scramble>04 — Опыт и образование</span>
+    <span class="idx micro" data-scramble>06 — Опыт и образование</span>
       <i class="rule" aria-hidden="true"></i>
   </div>
 
@@ -386,7 +512,7 @@
 <section class="sec sec--community" id="community">
   <div class="community">
     <div class="community__head">
-      <span class="idx micro" data-scramble>05 — Каталог услуг</span>
+      <span class="idx micro" data-scramble>07 — Каталог услуг</span>
       <span class="idx micro idx--r" data-scramble>vk.ru/codedm</span>
       <i class="rule" aria-hidden="true"></i>
     </div>
@@ -437,7 +563,7 @@
      ============================================================ -->
 <section class="sec sec--contact" id="contact">
   <div class="sec__head">
-    <span class="idx micro" data-scramble>06 — Контакты</span>
+    <span class="idx micro" data-scramble>08 — Контакты</span>
     <span class="idx micro idx--r" data-scramble>Отвечаю в течение дня</span>
       <i class="rule" aria-hidden="true"></i>
   </div>
