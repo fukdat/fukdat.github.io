@@ -83,12 +83,12 @@ export function initReveal(splitMap) {
 
   /* ---- mask / clip-path reveals ---- */
   $$('[data-mask]').forEach((el) => {
-    const img = el.querySelector('img');
+    // внутри может быть и фотография, и заглушка — берём то, что есть
+    const inner = el.querySelector('img, .ph');
+    const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
     gsap.set(el, { clipPath: 'inset(0% 0% 100% 0%)' });
-    gsap
-      .timeline({ scrollTrigger: { trigger: el, start: 'top 85%', once: true } })
-      .to(el, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.25, ease: 'expo.inOut' })
-      .to(img, { scale: 1, duration: 1.6, ease: EASE }, 0);
+    tl.to(el, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.25, ease: 'expo.inOut' });
+    if (inner) tl.to(inner, { scale: 1, duration: 1.6, ease: EASE }, 0);
   });
 
   /* ---- parallax ---- */
